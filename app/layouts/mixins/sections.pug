@@ -1,0 +1,21 @@
+mixin headerTop()
+	.container-content
+		.header__menu
+			.row.header__menu__links
+				a(href="").header__menu__links__item Referenzen
+				a(href="").header__menu__links__item Leistungen
+				a(href="").header__menu__links__item Über uns
+
+			.row.logo
+				a(href=""): img(src="assets/i/Hirsch-Logo.svg", alt="HIRSCH INTERNATIONAL GMBH LOGOTYPE")
+				
+			.row.header__menu__links
+				a(href="").header__menu__links__item Team
+				a(href="").header__menu__links__item Geschichte
+				a(href="").header__menu__links__item Kontakt
+				.language.header__menu__links__item.dropdown
+					a(href="").dropdown__toggle.active DE
+					.dropdown__content
+						a(href="").active DE
+						a(href="") EN
+						a(href="") PL

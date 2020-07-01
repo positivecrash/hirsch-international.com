@@ -1,0 +1,40 @@
+body {
+    --font-family-headings: 'Oswald', 'Open Sans', 'Roboto', sans-serif;
+    --font-family-text: 'Open Sans', 'Roboto', sans-serif;
+    --font-size-text: 14px;
+    --color-text: #000000;
+    --color-body: #ffffff;
+    --color-gray: #707070;
+    --color-gray-light: #EBEBEB;
+    --color-orange: #F06400;
+    --color-darkblue: #2F3545;
+    --space-side: 20px;
+}
+
+
+/*====== Fonts ======*/
+$font-family-base:  'Fira Sans Condensed', sans-serif;
+
+$scale: 1.5; //для вычисления интерлиньяжа
+$scale-sm: 1.2; //для вычисления интерлиньяжа заголовков
+$font-size-base: 14px;
+$font-size-title: 26px; //h1
+
+
+/*====== Margins, paddings ======*/
+$vertical-rythm: $font-size-base * $scale;
+$margin-sec: 40px;
+$padding-fields: 20px;
+$padding-fields-in: 10px;
+
+
+/*====== Bootstrap ======*/
+$bootstrap-sm: 576px;
+$bootstrap-md: 768px;
+$bootstrap-lg: 992px;
+
+
+/*====== Media queries ======*/
+// $mq-desktop: 1280px;
+$mq-tablet: 1024px;
+$mq-mobile: 768px;

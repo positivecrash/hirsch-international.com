@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Homepage / Hirsch International GMBH</title>
+    <link href="assets/css/website_styles.min.css?v=1" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
+  </head>
+  <body>
+    <header class="header header-home" role="banner">
+          <div class="container-content">
+            <div class="header__menu">
+              <div class="row header__menu__links"><a class="header__menu__links__item" href="">Referenzen</a><a class="header__menu__links__item" href="">Leistungen</a><a class="header__menu__links__item" href="">Über uns</a></div>
+              <div class="row logo"><a href=""><img src="assets/i/Hirsch-Logo.svg" alt="HIRSCH INTERNATIONAL GMBH LOGOTYPE"></a></div>
+              <div class="row header__menu__links"><a class="header__menu__links__item" href="">Team</a><a class="header__menu__links__item" href="">Geschichte</a><a class="header__menu__links__item" href="">Kontakt</a>
+                <div class="language header__menu__links__item dropdown"><a class="dropdown__toggle active" href="">DE</a>
+                  <div class="dropdown__content"><a class="active" href="">DE</a><a href="">EN</a><a href="">PL</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+      <div class="header-home__title">
+        <h1 class="container-content">Weil innere Werte zählen</h1>
+      </div>
+      <div class="header-home__video"><video autoplay muted loop>
+<source src="assets/i/Hirsch.mp4" type="video/mp4">
+</video>
+      </div>
+    </header>
+    <main role="main">
+      <div class="container-content-narrow">
+        <div class="home-specialization">
+          <div class="row"><img src="assets/i/specialization-1-thumbnail.png" srcset="assets/i/specialization-1@2x.png" alt="Wohnen Thumbnail" loading="lazy" width="160.72px">
+            <p>Wohnen</p><img src="assets/i/specialization-2-thumbnail.png" srcset="assets/i/specialization-2@2x.png" alt="Hotels / Büro / Shopping Thumbnail" loading="lazy" width="113.5px">
+            <p>Hotels / Büro / Shopping</p><img src="assets/i/specialization-3-thumbnail.png" srcset="assets/i/specialization-3@2x.png" alt="Luxury Exklusiv Thumbnail" loading="lazy" width="158.44px">
+            <p>Luxury Exklusiv</p>
+          </div>
+          <div class="row"><span>Wohnen</span><span>Hotels / Büro / Shopping</span><span>Luxury Exklusiv</span></div>
+        </div>
+        <div class="home-quality">
+          <h2>Innenausbau<br/> für herausragende Ergebnisse</h2>
+          <div class="home-quality__begin"><span>Beginn</span><span>der Geschichte</span><span class="big">1892</span></div>
+          <div class="home-quality__content">
+            <p>Wir sind weltweiter Auftragnehmer für Innenausbau und bieten Komplettlösungen mit Projektmanagement aus einer Hand: Sie erhalten termingerechte Fertigstellung in europäischer Handwerksqualität, einen geordneten Baustellenablauf und profitieren von der sicheren Partnerschaft mit einem Familienunternehmen, dessen Geschichte bereits 1892 beginnt.</p>
+            <div class="home-quality__sign"><img src="assets/i/Sign-Bogensperger-thumbnail.png" srcset="assets/i/Sign-Bogensperger@2x.png" alt="J. Bogensperger" loading="lazy" width="208px"><img src="assets/i/Sign-Hirsch-thumbnail.png" srcset="assets/i/Sign-Hirsch@2x.png" alt="O. Hirsch" loading="lazy" width="124px"></div>
+          </div>
+        </div>
+      </div>
+      <div class="home-services">
+        <div class="home-services__text container-content">
+          <h2>Komplettlösungen aus einer Hand</h2>
+          <p>Unser Vorteil: Wir verbinden die Schnittstellen zwischen der Gewerke und kümmern uns auch um die Details, damit die Qualität Ihres Projektes stimmt und die terminliche Koordination passt. Sie haben weniger Arbeit, weniger Sorgen, keine Extrakosten und nur einen Ansprechpartner.</p>
+        </div>
+        <div class="services">
+          <div class="container-content">
+            <div class="services__list">
+              <div class="services__listcontent"><a href="" data-img="service-1.jpg">Projekt- und Baumanagement</a><a href="">Trockenbau</a><a href="">Stuck- und Putzarbeiten (Farbe & Struktur)</a><a href="">Malerarbeiten</a><a href="">Bodenlegearbeiten</a><a href="">Bodenbeschichtungen</a><a href="">Fliesenlegearbeiten</a><a href="">Tischlerarbeiten</a><a href="">Wärmedämmung</a><a href="">Fassadentechnik</a></div>
+              <div class="services__border"></div>
+            </div>
+            <div class="services__image"></div>
+            <script>
+              var services = document.querySelectorAll('[data-img]');
+              var img = document.querySelector('.services__image');
+              services.forEach(function(item, index, array) {
+              	item.addEventListener("mouseenter", function( event ) {
+              			img.style.backgroundImage = "url('assets/i/services/"+event.target.dataset.img+"')";
+              		}, false);
+              	item.addEventListener("mouseleave", function( event ) {
+              			img.style.backgroundImage = "url('assets/i/services/service-default.jpg')";
+              		}, false);	
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer role="contentinfo">
+      <div class="container-content">1</div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+%link_noline
+	{
+	  &, &:hover, &:focus, &:visited{
+	    text-decoration: none;
+	    text-decoration: none !important;
+	  }
+	}
+
+%text_uppercase
+	{
+		text-transform: uppercase;
+        letter-spacing: 1px;
+	}
+
+%hidden
+	{
+		visibility: hidden;
+		opacity: 0;
+	}
+
+%visible
+	{
+		visibility: visible;
+  		opacity: 1;
+	}
+
