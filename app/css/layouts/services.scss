@@ -24,6 +24,10 @@
         bottom: 0;
         border: 12px solid var(--color-orange);
         z-index: 0;
+
+        @media screen and (max-width: 600px) {
+            display: none;
+        }
     }
 
     &__list {
@@ -42,6 +46,13 @@
 
         position: relative;
         z-index: 2;
+
+        @media screen and (max-width: 600px) {
+            grid-template-columns: 1fr;
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 0;
+        }
 
         a {
             @extend %link_noline;

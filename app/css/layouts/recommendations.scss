@@ -1,0 +1,33 @@
+.recommendations {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+
+    @media screen and (max-width: 600px) {
+        grid-template-columns: 1fr;
+    }
+
+    &__item {
+        transition: 0.2s ease all;
+        color: var(--color-text);
+        @extend %link_noline;
+        text-align: center;
+
+        &:hover {
+            opacity: 0.5;
+        }
+
+        img, strong, i {
+            display: block;
+        }
+
+        img {
+            max-width: 100%;
+            margin-bottom: 30px;
+        }
+
+        strong {
+            text-transform: uppercase;
+        }
+    }
+}

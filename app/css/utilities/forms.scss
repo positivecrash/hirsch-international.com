@@ -1,63 +1,19 @@
-// %inputs_base{
-// 	@extend %font_base;
-// 	font-size: $font-size-base;
-// 	font-weight: 500;
-//   	border-radius: 6px;
+.btn-bordered {
+    display: inline-block;
+    @extend %link_noline;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    padding: 10px 30px;
+}
 
-//   	display: inline-block;
-//   	vertical-align: middle;
-//   	box-sizing: border-box;
-//   	padding: 6px 10px;
-// }
+.btn-bordered {
+    border: 1px solid var(--color-gray);
+    color: var(--color-orange);
 
-// %btn_base{
-// 	@extend %link_noline;
-
-//   	appearance: none;
-//   	-webkit-appearance: none;
-//   	border: 0;
-//   	cursor: pointer;
-
-//   	font-size: $font-size-base;
-//   	text-align: center;
-
-//   	transition: all 0.2s ease-in-out;
-
-//   	&[disabled]{
-//   		cursor: default;
-
-// 		&, &:hover
-// 			{
-// 				opacity: 0.5;
-// 			}
-// 	}
-
-// 	&.container-full{
-// 		max-width: 300px;
-// 		margin-left: auto;
-// 		margin-right: auto;
-// 	}
-// }
-
-// input:not([type='submit']):not([type='button'])
-// 	{
-// 		@extend %inputs_base;
-
-// 		border-width: 1px;
-// 		border-style: solid;
-
-// 		&.input-line
-// 			{
-// 				border-width: 0 0 1px;
-// 				border-radius: 0;
-// 				padding-top: 0;
-// 				padding-bottom: 0;
-// 			}
-// 	}
-
-
-// input[type="submit"], input[type="button"], button, *[class *= 'btn-']
-// 	{
-// 		@extend %inputs_base;
-// 		@extend %btn_base;
-// 	}
+    &:hover {
+        background-color: var(--color-orange);
+        color: var(--color-body);
+    }
+}

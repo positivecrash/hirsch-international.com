@@ -16,10 +16,26 @@ body {
 	font-weight: 300;
 	text-transform: uppercase;
 	letter-spacing: 1px;
+	text-align: center;
+	margin: 40px 0;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 h1, h2 {
 	font-weight: 400;
+}
+
+h2 {
+	font-weight: 300;
+	font-size: calc(var(--font-size-text) + 18px);
+	color: var(--color-darkblue);
 }
 
 ul, ol, li, p, blockquote {
