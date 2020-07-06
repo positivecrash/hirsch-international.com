@@ -7,15 +7,18 @@
         grid-template-columns: 1fr;
     }
 
-    &__item {
-        transition: 0.2s ease all;
-        color: var(--color-text);
+    a.recommendations__item {
         @extend %link_noline;
-        text-align: center;
-
+        
         &:hover {
             opacity: 0.5;
         }
+    }
+
+    &__item {
+        transition: 0.2s ease all;
+        color: var(--color-text);
+        text-align: center;
 
         img, strong, i {
             display: block;
