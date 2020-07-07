@@ -48,50 +48,7 @@
         margin: 30px auto 0;
     }
 
-    &__sign {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-top: 50px;
-
-        $dashoffset: 600;
-        $delay: .5s;
-        $duration: 2s;
-
-        @keyframes sign {
-            from {
-              stroke-dashoffset: $dashoffset;
-            }
-            to {
-              stroke-dashoffset: 0;
-            }
-        }
-
-        svg {
-            path, line {
-                stroke-dasharray: $dashoffset;
-                stroke-dashoffset: $dashoffset;
-                animation-name: sign;
-                animation-fill-mode: forwards;
-                animation-timing-function: ease-in-out;
-                animation-duration:  $duration;
-            }
-        }
-
-        #SignHirsch path {
-            @for $i from 1 through 9 {
-                &:nth-child(#{$i}) { animation-delay: $delay + $i*0.4s; }
-            }
-        }
-
-        #SignBogensperger {
-            path, line {
-                @for $i from 1 through 9 {
-                    &:nth-child(#{$i}) { animation-delay: $delay + $i*0.7s; }
-                }
-            }
-        }
-    }
+    $delay_begin: 1s;
 
     &__begin {
         position: absolute;
@@ -103,6 +60,8 @@
 
         font-family: var(--font-family-headings);
         text-transform: uppercase;
+
+        @extend %hidden; //for animation
 
         span {
             display: block;
@@ -117,8 +76,17 @@
             line-height: 1;
         }
 
+        @keyframes Rhombus {
+            0% {
+                transform: rotate(45deg) translateY(20%);
+            }
+            100%{
+                transform: rotate(45deg) translateY(0%);
+            }
+        }
+        
         $square_size: 140px;
-        &:after {
+        &::after {
             content: "";
             width: $square_size;
             height: $square_size;
@@ -127,8 +95,9 @@
             z-index: -1;
             top: calc(50% - 70px);
             left: calc(50% - 70px);
-            transform: rotate(45deg);
+            transform: rotate(45deg), translateY(20%);
             transform-origin: 50% 50%;
+            @extend %hidden;
         }
     }
 
@@ -143,6 +112,71 @@
         p {
             margin-top: 10px;
         }
+    }
+
+    &__sign {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 50px;
+    }
+
+    &.animated {
+        .home-quality__begin {
+            animation: FadeIn .8s linear $delay_begin forwards;
+
+            &::after {
+                animation: Rhombus $delay_begin linear .6s forwards, FadeIn .6s linear .5s forwards; 
+            }
+        }
+
+        .home-quality__sign {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 50px;
+    
+            $dashoffset: 600;
+            $delay: .5s + $delay_begin;
+            $duration: 1.2s;
+    
+            @keyframes sign {
+                from {
+                  stroke-dashoffset: $dashoffset;
+                }
+                to {
+                  stroke-dashoffset: 0;
+                }
+            }
+
+            svg {
+                path, line {
+                    stroke-dasharray: $dashoffset;
+                    stroke-dashoffset: $dashoffset;
+                    animation-name: sign;
+                    animation-fill-mode: forwards;
+                    animation-timing-function: ease-in-out;
+                    animation-duration: $duration;
+                }
+            }
+    
+            #SignHirsch path {
+                @for $i from 1 through 9 {
+                    &:nth-child(#{$i}) { animation-delay: $delay + $i*0.2s; }
+                }
+            }
+    
+            #SignBogensperger {
+                path, line {
+    
+                    @for $i from 1 through 9 {
+                        &:nth-child(#{$i}) { animation-delay: $delay*2 + 0.2*3 + $i*0.5s; }
+                    }
+                }
+            }
+        }
+
+        
     }
 }
 
@@ -193,6 +227,9 @@
         right: 50%;
         background-color: var(--color-orange);
         z-index: 0;
+
+        transform-origin: 0 50%;
+            transform: scaleX(0);
     }
 
     & > div {
@@ -216,10 +253,28 @@
 
     h2 {
         color: var(--color-body);
-        background-color: var(--color-orange);
         text-align: left;
         padding: 40px;
         margin-bottom: 0;
+        position: relative;
+
+        span {
+            position: relative;
+            z-index: 1;
+        }
+
+        &::before {
+            content: "";
+            background-color: var(--color-orange);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            transform-origin: 0 50%;
+            transform: scaleX(0);
+        }
     }
 
     ul {
@@ -285,6 +340,19 @@
 
     &.animated {
         $delay_bonus: 0.4s;
+
+        &::before, h2::before {
+            animation-name: ScaleX;
+            animation-timing-function: linear;
+            animation-duration: 0.5s;
+            animation-fill-mode: forwards;
+            animation-delay: .7s;
+        }
+
+        &::before {
+            animation-delay: .3s;
+            animation-duration: .9s;
+        }
 
         ul li {
 

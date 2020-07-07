@@ -55,6 +55,8 @@ body {
   --color-orange: #F06400;
   --color-darkblue: #2F3545;
   --space-side: 20px;
+  --animation-bump: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  --animation-border: cubic-bezier(0.6, 0.04, 0.98, 0.335);
 }
 
 /*====== Fonts ======*/
@@ -66,7 +68,7 @@ body {
   text-decoration: none !important;
 }
 
-.map__map__map, .map__map__logo {
+.home-quality__begin, .home-quality__begin::after, .map__text, .map__map__map, .map__map__logo {
   visibility: hidden;
   opacity: 0;
 }
@@ -137,6 +139,14 @@ a {
     opacity: 1;
   }
 }
+@keyframes Scale {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 @keyframes ScaleX {
   0% {
     transform: scaleX(0);
@@ -162,6 +172,14 @@ a {
   }
   66.6% {
     transform: translateY(10%);
+  }
+}
+@keyframes FloatYDown {
+  0% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 .btn-bordered {
@@ -456,82 +474,6 @@ section {
   max-width: 520px;
   margin: 30px auto 0;
 }
-.home-quality__sign {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 50px;
-}
-@keyframes sign {
-  from {
-    stroke-dashoffset: 600;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-.home-quality__sign svg path, .home-quality__sign svg line {
-  stroke-dasharray: 600;
-  stroke-dashoffset: 600;
-  animation-name: sign;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-  animation-duration: 2s;
-}
-.home-quality__sign #SignHirsch path:nth-child(1) {
-  animation-delay: 0.9s;
-}
-.home-quality__sign #SignHirsch path:nth-child(2) {
-  animation-delay: 1.3s;
-}
-.home-quality__sign #SignHirsch path:nth-child(3) {
-  animation-delay: 1.7s;
-}
-.home-quality__sign #SignHirsch path:nth-child(4) {
-  animation-delay: 2.1s;
-}
-.home-quality__sign #SignHirsch path:nth-child(5) {
-  animation-delay: 2.5s;
-}
-.home-quality__sign #SignHirsch path:nth-child(6) {
-  animation-delay: 2.9s;
-}
-.home-quality__sign #SignHirsch path:nth-child(7) {
-  animation-delay: 3.3s;
-}
-.home-quality__sign #SignHirsch path:nth-child(8) {
-  animation-delay: 3.7s;
-}
-.home-quality__sign #SignHirsch path:nth-child(9) {
-  animation-delay: 4.1s;
-}
-.home-quality__sign #SignBogensperger path:nth-child(1), .home-quality__sign #SignBogensperger line:nth-child(1) {
-  animation-delay: 1.2s;
-}
-.home-quality__sign #SignBogensperger path:nth-child(2), .home-quality__sign #SignBogensperger line:nth-child(2) {
-  animation-delay: 1.9s;
-}
-.home-quality__sign #SignBogensperger path:nth-child(3), .home-quality__sign #SignBogensperger line:nth-child(3) {
-  animation-delay: 2.6s;
-}
-.home-quality__sign #SignBogensperger path:nth-child(4), .home-quality__sign #SignBogensperger line:nth-child(4) {
-  animation-delay: 3.3s;
-}
-.home-quality__sign #SignBogensperger path:nth-child(5), .home-quality__sign #SignBogensperger line:nth-child(5) {
-  animation-delay: 4s;
-}
-.home-quality__sign #SignBogensperger path:nth-child(6), .home-quality__sign #SignBogensperger line:nth-child(6) {
-  animation-delay: 4.7s;
-}
-.home-quality__sign #SignBogensperger path:nth-child(7), .home-quality__sign #SignBogensperger line:nth-child(7) {
-  animation-delay: 5.4s;
-}
-.home-quality__sign #SignBogensperger path:nth-child(8), .home-quality__sign #SignBogensperger line:nth-child(8) {
-  animation-delay: 6.1s;
-}
-.home-quality__sign #SignBogensperger path:nth-child(9), .home-quality__sign #SignBogensperger line:nth-child(9) {
-  animation-delay: 6.8s;
-}
 .home-quality__begin {
   position: absolute;
   top: 76px;
@@ -551,7 +493,15 @@ section {
   font-size: calc(var(--font-size-text) + 30px);
   line-height: 1;
 }
-.home-quality__begin:after {
+@keyframes Rhombus {
+  0% {
+    transform: rotate(45deg) translateY(20%);
+  }
+  100% {
+    transform: rotate(45deg) translateY(0%);
+  }
+}
+.home-quality__begin::after {
   content: "";
   width: 140px;
   height: 140px;
@@ -560,7 +510,7 @@ section {
   z-index: -1;
   top: calc(50% - 70px);
   left: calc(50% - 70px);
-  transform: rotate(45deg);
+  transform: rotate(45deg), translateY(20%);
   transform-origin: 50% 50%;
 }
 @media screen and (max-width: 900px) {
@@ -573,6 +523,94 @@ section {
   .home-quality p {
     margin-top: 10px;
   }
+}
+.home-quality__sign {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 50px;
+}
+.home-quality.animated .home-quality__begin {
+  animation: FadeIn 0.8s linear 1s forwards;
+}
+.home-quality.animated .home-quality__begin::after {
+  animation: Rhombus 1s linear 0.6s forwards, FadeIn 0.6s linear 0.5s forwards;
+}
+.home-quality.animated .home-quality__sign {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 50px;
+}
+@keyframes sign {
+  from {
+    stroke-dashoffset: 600;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.home-quality.animated .home-quality__sign svg path, .home-quality.animated .home-quality__sign svg line {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation-name: sign;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1.2s;
+}
+.home-quality.animated .home-quality__sign #SignHirsch path:nth-child(1) {
+  animation-delay: 1.7s;
+}
+.home-quality.animated .home-quality__sign #SignHirsch path:nth-child(2) {
+  animation-delay: 1.9s;
+}
+.home-quality.animated .home-quality__sign #SignHirsch path:nth-child(3) {
+  animation-delay: 2.1s;
+}
+.home-quality.animated .home-quality__sign #SignHirsch path:nth-child(4) {
+  animation-delay: 2.3s;
+}
+.home-quality.animated .home-quality__sign #SignHirsch path:nth-child(5) {
+  animation-delay: 2.5s;
+}
+.home-quality.animated .home-quality__sign #SignHirsch path:nth-child(6) {
+  animation-delay: 2.7s;
+}
+.home-quality.animated .home-quality__sign #SignHirsch path:nth-child(7) {
+  animation-delay: 2.9s;
+}
+.home-quality.animated .home-quality__sign #SignHirsch path:nth-child(8) {
+  animation-delay: 3.1s;
+}
+.home-quality.animated .home-quality__sign #SignHirsch path:nth-child(9) {
+  animation-delay: 3.3s;
+}
+.home-quality.animated .home-quality__sign #SignBogensperger path:nth-child(1), .home-quality.animated .home-quality__sign #SignBogensperger line:nth-child(1) {
+  animation-delay: 4.1s;
+}
+.home-quality.animated .home-quality__sign #SignBogensperger path:nth-child(2), .home-quality.animated .home-quality__sign #SignBogensperger line:nth-child(2) {
+  animation-delay: 4.6s;
+}
+.home-quality.animated .home-quality__sign #SignBogensperger path:nth-child(3), .home-quality.animated .home-quality__sign #SignBogensperger line:nth-child(3) {
+  animation-delay: 5.1s;
+}
+.home-quality.animated .home-quality__sign #SignBogensperger path:nth-child(4), .home-quality.animated .home-quality__sign #SignBogensperger line:nth-child(4) {
+  animation-delay: 5.6s;
+}
+.home-quality.animated .home-quality__sign #SignBogensperger path:nth-child(5), .home-quality.animated .home-quality__sign #SignBogensperger line:nth-child(5) {
+  animation-delay: 6.1s;
+}
+.home-quality.animated .home-quality__sign #SignBogensperger path:nth-child(6), .home-quality.animated .home-quality__sign #SignBogensperger line:nth-child(6) {
+  animation-delay: 6.6s;
+}
+.home-quality.animated .home-quality__sign #SignBogensperger path:nth-child(7), .home-quality.animated .home-quality__sign #SignBogensperger line:nth-child(7) {
+  animation-delay: 7.1s;
+}
+.home-quality.animated .home-quality__sign #SignBogensperger path:nth-child(8), .home-quality.animated .home-quality__sign #SignBogensperger line:nth-child(8) {
+  animation-delay: 7.6s;
+}
+.home-quality.animated .home-quality__sign #SignBogensperger path:nth-child(9), .home-quality.animated .home-quality__sign #SignBogensperger line:nth-child(9) {
+  animation-delay: 8.1s;
 }
 
 .home-services {
@@ -615,6 +653,8 @@ section {
   right: 50%;
   background-color: var(--color-orange);
   z-index: 0;
+  transform-origin: 0 50%;
+  transform: scaleX(0);
 }
 .home-bonus > div {
   max-width: calc(950px - var(--space-side) * 2);
@@ -640,10 +680,26 @@ section {
 }
 .home-bonus h2 {
   color: var(--color-body);
-  background-color: var(--color-orange);
   text-align: left;
   padding: 40px;
   margin-bottom: 0;
+  position: relative;
+}
+.home-bonus h2 span {
+  position: relative;
+  z-index: 1;
+}
+.home-bonus h2::before {
+  content: "";
+  background-color: var(--color-orange);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  transform-origin: 0 50%;
+  transform: scaleX(0);
 }
 .home-bonus ul {
   display: grid;
@@ -701,6 +757,17 @@ section {
   height: 2px;
   transform: scaleX(0);
 }
+.home-bonus.animated::before, .home-bonus.animated h2::before {
+  animation-name: ScaleX;
+  animation-timing-function: linear;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: .7s;
+}
+.home-bonus.animated::before {
+  animation-delay: .3s;
+  animation-duration: .9s;
+}
 .home-bonus.animated ul li i::before {
   animation-name: ScaleY;
 }
@@ -742,13 +809,11 @@ section {
   background-image: url('../i/services/service-default.jpg?1593625302');
 }
 .services__border {
-  content: "";
-  position: absolute;
+  position: absolute !important;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  border: 12px solid var(--color-orange);
   z-index: 0;
 }
 @media screen and (max-width: 600px) {
@@ -844,7 +909,8 @@ section {
 }
 .map__text {
   padding: 70px 35px 35px;
-  border: 9px solid var(--color-orange);
+  transform-origin: 50% 0;
+  transform: translateY(-10%);
 }
 .map__text, .map__text h2 {
   color: var(--color-body);
@@ -885,4 +951,40 @@ section {
 }
 .map.animated .map__map__logo {
   animation: FadeIn 0.4s ease-in-out 1.4s forwards, FloatY 1.5s linear 1.6s infinite;
+}
+.map.animated .map__text {
+  animation: FloatYDown 0.8s var(--animation-bump) 1s forwards, FadeIn 0.6s linear 1s forwards;
+}
+
+.animated-border {
+  position: relative;
+}
+.animated-border::before, .animated-border::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  border-style: solid;
+  border-color: var(--color-orange);
+  border-width: 0;
+}
+.animated-border::before {
+  border-width: 9px 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+.animated-border::after {
+  border-width: 0 9px;
+  transform: scaleY(0);
+  transform-origin: 0 0;
+}
+
+.animated .animated-border::before {
+  animation: ScaleX 0.4s var(--animation-border) 0.8s forwards;
+}
+.animated .animated-border::after {
+  animation: ScaleY 0.4s var(--animation-border) 1.2s forwards;
 }

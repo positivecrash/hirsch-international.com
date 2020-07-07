@@ -24,7 +24,9 @@
     &__text {
         // align-self: start;
         padding: 70px 35px 35px;
-        border: 9px solid var(--color-orange);
+        transform-origin: 50% 0;
+        @extend %hidden;
+        transform: translateY(-10%);
         
         &, h2 { color: var(--color-body); }
     }
@@ -62,12 +64,64 @@
     }
 
     &.animated {
-        .map__map__map {
-            animation: FadeIn 0.4s ease-in-out 0.8s forwards;
-        }
 
-        .map__map__logo {
-            animation: FadeIn 0.4s ease-in-out 1.4s forwards, FloatY 1.5s linear 1.6s infinite;
+        .map {
+            &__map {
+                &__map {
+                    animation: FadeIn 0.4s ease-in-out 0.8s forwards;
+                }
+
+                &__logo {
+                    animation: FadeIn 0.4s ease-in-out 1.4s forwards, FloatY 1.5s linear 1.6s infinite;
+                }
+            }
+
+            &__text {
+                animation: FloatYDown .8s var(--animation-bump) 1s forwards, FadeIn .6s linear 1s forwards;
+            }
         }
+        
+    }
+}
+
+.animated-border {
+    position: relative;
+
+    &::before, &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        border-style: solid;
+        border-color: var(--color-orange);
+        border-width: 0;
+    }
+
+    &::before {
+        border-width: 9px 0;
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+    }
+
+    &::after {
+        border-width: 0 9px;
+        transform: scaleY(0);
+        transform-origin: 0 0;
+    }
+}
+
+.animated .animated-border {
+    $BO_duration: 0.4s;
+    $BO_delay: .8s;
+
+    &::before {
+        animation: ScaleX $BO_duration var(--animation-border) $BO_delay forwards;
+    }
+
+    &::after {
+        animation: ScaleY $BO_duration var(--animation-border) $BO_delay+$BO_duration forwards;
     }
 }

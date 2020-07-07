@@ -21,7 +21,7 @@ block content
 				span Hotels / Büro / Shopping
 				span Luxury Exklusiv
 	
-		section.home-quality
+		section.home-quality.animated
 			h2 Innenausbau<br/> für herausragende Ergebnisse
 			.home-quality__begin
 				span Beginn
@@ -39,38 +39,7 @@ block content
 		.home-services__text.container-content
 			h2 Komplettlösungen aus einer Hand
 			p Unser Vorteil: Wir verbinden die Schnittstellen zwischen der Gewerke und kümmern uns auch um die Details, damit die Qualität Ihres Projektes stimmt und die terminliche Koordination passt. Sie haben weniger Arbeit, weniger Sorgen, keine Extrakosten und nur einen Ansprechpartner.
-
-		.services
-			.container-content
-				.services__list
-					.services__listcontent
-						a(href="", data-img="service-1.jpg") Projekt- und Baumanagement
-						a(href="") Trockenbau
-						a(href="") Stuck- und Putzarbeiten (Farbe & Struktur)
-						a(href="") Malerarbeiten
-						a(href="") Bodenlegearbeiten
-
-						a(href="") Bodenbeschichtungen
-						a(href="") Fliesenlegearbeiten
-						a(href="") Tischlerarbeiten
-						a(href="") Wärmedämmung
-						a(href="") Fassadentechnik
-					
-					.services__border
-
-				.services__image
-
-				script.
-					var services = document.querySelectorAll('[data-img]');
-					var img = document.querySelector('.services__image');
-					services.forEach(function(item, index, array) {
-						item.addEventListener("mouseenter", function( event ) {
-								img.style.backgroundImage = "url('assets/i/services/"+event.target.dataset.img+"')";
-							}, false);
-						item.addEventListener("mouseleave", function( event ) {
-								img.style.backgroundImage = "url('assets/i/services/service-default.jpg')";
-							}, false);	
-					});
+		+section_services()
 
 	section.home-recommendations
 		.container-content
@@ -98,9 +67,10 @@ block content
 	section.home-bonus.animated
 		div
 			h2
-				| Ihre
-				br/
-				| Vorteile
+				span
+					| Ihre
+					br/
+					| Vorteile
 			ul
 				li.col1
 					i
@@ -122,11 +92,4 @@ block content
 					span Garantieren Verlässlichkeit und Menschlichkeit
 
 
-	section.map.animated
-		.container-content
-			.map__map
-				img.map__map__map(src="assets/i/map.png", alt="")
-				img.map__map__logo(src="assets/i/Hirsch-Logo-Small.svg", alt="")
-			.map__text
-				h2 Weltweit für Sie vor Ort
-				p Für Sie sind wir überall vor Ort, unabhängig davon, wie komplex und herausfordernd Ihr Neubau, Umbau oder Ihre Sanierung ist: In unseren Zentralen in Österreich, Polen, Tschechien, Rumänien, der Schweiz und überall dort, wo sie uns gerade brauchen, von Europa über Asien und Afrika bis Amerika und gern noch ein kleines Stück weiter.
+	+section_map()

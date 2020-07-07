@@ -52,3 +52,49 @@ mixin sign_Bogensperger()
 	| <path class="st0" d="M203.8,29.1c0,0,2.7-5.3-2.7-3.5c-5.5,1.8-7.3,9.7-3.7,8.9c3.7-0.9,9.1-8.9,9.1-8.9s-13,31.2-16.8,26.6c-6.8-8.5,7.6-11.9,20.4-19.5c12.8-7.6,7.6-9.3,4.6-7.1c-2.9,2.1-6.2,11.1,0,9.9c0,0,11.9-3.3,11.9-10.6c0-2.7-5.3,5.5-2,5.5c1.8,0,4-2.1,6.7-3.9c3.1-2-10,14.5,3.8,6.5"/>
 	| </g>
 	| </svg>
+
+
+
+mixin section_services()
+	.services.animated
+		.container-content
+			.services__list
+				.services__listcontent
+					a(href="", data-img="service-1.jpg") Projekt- und Baumanagement
+					a(href="") Trockenbau
+					a(href="") Stuck- und Putzarbeiten (Farbe & Struktur)
+					a(href="") Malerarbeiten
+					a(href="") Bodenlegearbeiten
+
+					a(href="") Bodenbeschichtungen
+					a(href="") Fliesenlegearbeiten
+					a(href="") Tischlerarbeiten
+					a(href="") Wärmedämmung
+					a(href="") Fassadentechnik
+				
+				.services__border.animated-border
+
+			.services__image
+
+			script.
+				var services = document.querySelectorAll('[data-img]');
+				var img = document.querySelector('.services__image');
+				services.forEach(function(item, index, array) {
+					item.addEventListener("mouseenter", function( event ) {
+							img.style.backgroundImage = "url('assets/i/services/"+event.target.dataset.img+"')";
+						}, false);
+					item.addEventListener("mouseleave", function( event ) {
+							img.style.backgroundImage = "url('assets/i/services/service-default.jpg')";
+						}, false);	
+				});
+
+
+mixin section_map()
+	section.map.animated
+		.container-content
+			.map__map
+				img.map__map__map(src="assets/i/map.png", alt="")
+				img.map__map__logo(src="assets/i/Hirsch-Logo-Small.svg", alt="")
+			.map__text.animated-border
+				h2 Weltweit für Sie vor Ort
+				p Für Sie sind wir überall vor Ort, unabhängig davon, wie komplex und herausfordernd Ihr Neubau, Umbau oder Ihre Sanierung ist: In unseren Zentralen in Österreich, Polen, Tschechien, Rumänien, der Schweiz und überall dort, wo sie uns gerade brauchen, von Europa über Asien und Afrika bis Amerika und gern noch ein kleines Stück weiter.

@@ -41,7 +41,7 @@
           </div>
           <div class="row"><span>Wohnen</span><span>Hotels / Büro / Shopping</span><span>Luxury Exklusiv</span></div>
         </section>
-        <section class="home-quality">
+        <section class="home-quality animated">
           <h2>Innenausbau<br/> für herausragende Ergebnisse</h2>
           <div class="home-quality__begin"><span>Beginn</span><span>der Geschichte</span><span class="big">1892</span></div>
           <div class="home-quality__content">
@@ -83,28 +83,29 @@
           <h2>Komplettlösungen aus einer Hand</h2>
           <p>Unser Vorteil: Wir verbinden die Schnittstellen zwischen der Gewerke und kümmern uns auch um die Details, damit die Qualität Ihres Projektes stimmt und die terminliche Koordination passt. Sie haben weniger Arbeit, weniger Sorgen, keine Extrakosten und nur einen Ansprechpartner.</p>
         </div>
-        <div class="services">
-          <div class="container-content">
-            <div class="services__list">
-              <div class="services__listcontent"><a href="" data-img="service-1.jpg">Projekt- und Baumanagement</a><a href="">Trockenbau</a><a href="">Stuck- und Putzarbeiten (Farbe & Struktur)</a><a href="">Malerarbeiten</a><a href="">Bodenlegearbeiten</a><a href="">Bodenbeschichtungen</a><a href="">Fliesenlegearbeiten</a><a href="">Tischlerarbeiten</a><a href="">Wärmedämmung</a><a href="">Fassadentechnik</a></div>
-              <div class="services__border"></div>
+            <div class="services animated">
+              <div class="container-content">
+                <div class="services__list">
+                  <div class="services__listcontent"><a href="" data-img="service-1.jpg">Projekt- und Baumanagement</a><a href="">Trockenbau</a><a href="">Stuck- und Putzarbeiten (Farbe & Struktur)</a><a href="">Malerarbeiten</a><a href="">Bodenlegearbeiten</a><a href="">Bodenbeschichtungen</a><a href="">Fliesenlegearbeiten</a><a href="">Tischlerarbeiten</a><a href="">Wärmedämmung</a><a href="">Fassadentechnik</a></div>
+                  <div class="services__border animated-border"></div>
+                </div>
+                <div class="services__image"></div>
+                <script>
+                  var services = document.querySelectorAll('[data-img]');
+                  var img = document.querySelector('.services__image');
+                  services.forEach(function(item, index, array) {
+                  	item.addEventListener("mouseenter", function( event ) {
+                  			img.style.backgroundImage = "url('assets/i/services/"+event.target.dataset.img+"')";
+                  		}, false);
+                  	item.addEventListener("mouseleave", function( event ) {
+                  			img.style.backgroundImage = "url('assets/i/services/service-default.jpg')";
+                  		}, false);	
+                  });
+                  
+                  
+                </script>
+              </div>
             </div>
-            <div class="services__image"></div>
-            <script>
-              var services = document.querySelectorAll('[data-img]');
-              var img = document.querySelector('.services__image');
-              services.forEach(function(item, index, array) {
-              	item.addEventListener("mouseenter", function( event ) {
-              			img.style.backgroundImage = "url('assets/i/services/"+event.target.dataset.img+"')";
-              		}, false);
-              	item.addEventListener("mouseleave", function( event ) {
-              			img.style.backgroundImage = "url('assets/i/services/service-default.jpg')";
-              		}, false);	
-              });
-              
-            </script>
-          </div>
-        </div>
       </div>
       <section class="home-recommendations">
         <div class="container-content">
@@ -119,7 +120,7 @@
       </section>
       <section class="home-bonus animated">
         <div>
-          <h2>Ihre<br/>Vorteile</h2>
+          <h2><span>Ihre<br/>Vorteile</span></h2>
           <ul>
             <li class="col1"><i></i><span>Wir arbeiten kompetent, vernetzt und haben Erfahrung</span></li>
             <li class="col1"><i></i><span>Bieten höchste Handwerksqualität und Detailgenauigkeit</span></li>
@@ -130,15 +131,15 @@
           </ul>
         </div>
       </section>
-      <section class="map animated">
-        <div class="container-content">
-          <div class="map__map"><img class="map__map__map" src="assets/i/map.png" alt=""><img class="map__map__logo" src="assets/i/Hirsch-Logo-Small.svg" alt=""></div>
-          <div class="map__text">
-            <h2>Weltweit für Sie vor Ort</h2>
-            <p>Für Sie sind wir überall vor Ort, unabhängig davon, wie komplex und herausfordernd Ihr Neubau, Umbau oder Ihre Sanierung ist: In unseren Zentralen in Österreich, Polen, Tschechien, Rumänien, der Schweiz und überall dort, wo sie uns gerade brauchen, von Europa über Asien und Afrika bis Amerika und gern noch ein kleines Stück weiter.</p>
-          </div>
-        </div>
-      </section>
+          <section class="map animated">
+            <div class="container-content">
+              <div class="map__map"><img class="map__map__map" src="assets/i/map.png" alt=""><img class="map__map__logo" src="assets/i/Hirsch-Logo-Small.svg" alt=""></div>
+              <div class="map__text animated-border">
+                <h2>Weltweit für Sie vor Ort</h2>
+                <p>Für Sie sind wir überall vor Ort, unabhängig davon, wie komplex und herausfordernd Ihr Neubau, Umbau oder Ihre Sanierung ist: In unseren Zentralen in Österreich, Polen, Tschechien, Rumänien, der Schweiz und überall dort, wo sie uns gerade brauchen, von Europa über Asien und Afrika bis Amerika und gern noch ein kleines Stück weiter.</p>
+              </div>
+            </div>
+          </section>
     </main>
     <footer role="contentinfo">
       <div class="container-content">1</div>
