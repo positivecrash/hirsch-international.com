@@ -21,7 +21,7 @@ block content
 				span Hotels / Büro / Shopping
 				span Luxury Exklusiv
 	
-		section.home-quality.animated
+		section.home-quality
 			h2 Innenausbau<br/> für herausragende Ergebnisse
 			.home-quality__begin
 				span Beginn
@@ -34,6 +34,9 @@ block content
 				.home-quality__sign
 					+sign_Hirsch()
 					+sign_Bogensperger()
+
+			script.
+				animateScroll('.home-quality');
 	
 	.home-services
 		.home-services__text.container-content
@@ -64,7 +67,7 @@ block content
 				a.btn-bordered(href="") alle  >>>
 				
 
-	section.home-bonus.animated
+	section.home-bonus
 		div
 			h2
 				span
@@ -90,6 +93,9 @@ block content
 				li.col2
 					i
 					span Garantieren Verlässlichkeit und Menschlichkeit
+
+		script.
+			animateScroll('.home-bonus');
 
 
 	+section_map()

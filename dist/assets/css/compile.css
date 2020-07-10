@@ -57,6 +57,7 @@ body {
   --space-side: 20px;
   --animation-bump: cubic-bezier(0.6, 0.04, 0.98, 0.335);
   --animation-border: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  --animation-scrolldelay: 1.5s;
 }
 
 /*====== Fonts ======*/
@@ -531,10 +532,10 @@ section {
   padding-top: 50px;
 }
 .home-quality.animated .home-quality__begin {
-  animation: FadeIn 0.8s linear 1s forwards;
+  animation: FadeIn 0.8s linear var(--animation-scrolldelay) forwards;
 }
 .home-quality.animated .home-quality__begin::after {
-  animation: Rhombus 1s linear 0.6s forwards, FadeIn 0.6s linear 0.5s forwards;
+  animation: Rhombus 0.6s linear var(--animation-scrolldelay) forwards, FadeIn 0.6s linear var(--animation-scrolldelay) forwards;
 }
 .home-quality.animated .home-quality__sign {
   display: flex;
@@ -559,58 +560,58 @@ section {
   animation-duration: 1.2s;
 }
 .home-quality.animated .home-quality__sign #SignHirsch path:nth-child(1) {
-  animation-delay: 1.7s;
+  animation-delay: calc(var(--animation-scrolldelay) + 0.5s + 1*0.2s);
 }
 .home-quality.animated .home-quality__sign #SignHirsch path:nth-child(2) {
-  animation-delay: 1.9s;
+  animation-delay: calc(var(--animation-scrolldelay) + 0.5s + 2*0.2s);
 }
 .home-quality.animated .home-quality__sign #SignHirsch path:nth-child(3) {
-  animation-delay: 2.1s;
+  animation-delay: calc(var(--animation-scrolldelay) + 0.5s + 3*0.2s);
 }
 .home-quality.animated .home-quality__sign #SignHirsch path:nth-child(4) {
-  animation-delay: 2.3s;
+  animation-delay: calc(var(--animation-scrolldelay) + 0.5s + 4*0.2s);
 }
 .home-quality.animated .home-quality__sign #SignHirsch path:nth-child(5) {
-  animation-delay: 2.5s;
+  animation-delay: calc(var(--animation-scrolldelay) + 0.5s + 5*0.2s);
 }
 .home-quality.animated .home-quality__sign #SignHirsch path:nth-child(6) {
-  animation-delay: 2.7s;
+  animation-delay: calc(var(--animation-scrolldelay) + 0.5s + 6*0.2s);
 }
 .home-quality.animated .home-quality__sign #SignHirsch path:nth-child(7) {
-  animation-delay: 2.9s;
+  animation-delay: calc(var(--animation-scrolldelay) + 0.5s + 7*0.2s);
 }
 .home-quality.animated .home-quality__sign #SignHirsch path:nth-child(8) {
-  animation-delay: 3.1s;
+  animation-delay: calc(var(--animation-scrolldelay) + 0.5s + 8*0.2s);
 }
 .home-quality.animated .home-quality__sign #SignHirsch path:nth-child(9) {
-  animation-delay: 3.3s;
+  animation-delay: calc(var(--animation-scrolldelay) + 0.5s + 9*0.2s);
 }
 .home-quality.animated .home-quality__sign #SignBogensperger path:nth-child(1), .home-quality.animated .home-quality__sign #SignBogensperger line:nth-child(1) {
-  animation-delay: 4.1s;
+  animation-delay: 2.1s;
 }
 .home-quality.animated .home-quality__sign #SignBogensperger path:nth-child(2), .home-quality.animated .home-quality__sign #SignBogensperger line:nth-child(2) {
-  animation-delay: 4.6s;
+  animation-delay: 2.6s;
 }
 .home-quality.animated .home-quality__sign #SignBogensperger path:nth-child(3), .home-quality.animated .home-quality__sign #SignBogensperger line:nth-child(3) {
-  animation-delay: 5.1s;
+  animation-delay: 3.1s;
 }
 .home-quality.animated .home-quality__sign #SignBogensperger path:nth-child(4), .home-quality.animated .home-quality__sign #SignBogensperger line:nth-child(4) {
-  animation-delay: 5.6s;
+  animation-delay: 3.6s;
 }
 .home-quality.animated .home-quality__sign #SignBogensperger path:nth-child(5), .home-quality.animated .home-quality__sign #SignBogensperger line:nth-child(5) {
-  animation-delay: 6.1s;
+  animation-delay: 4.1s;
 }
 .home-quality.animated .home-quality__sign #SignBogensperger path:nth-child(6), .home-quality.animated .home-quality__sign #SignBogensperger line:nth-child(6) {
-  animation-delay: 6.6s;
+  animation-delay: 4.6s;
 }
 .home-quality.animated .home-quality__sign #SignBogensperger path:nth-child(7), .home-quality.animated .home-quality__sign #SignBogensperger line:nth-child(7) {
-  animation-delay: 7.1s;
+  animation-delay: 5.1s;
 }
 .home-quality.animated .home-quality__sign #SignBogensperger path:nth-child(8), .home-quality.animated .home-quality__sign #SignBogensperger line:nth-child(8) {
-  animation-delay: 7.6s;
+  animation-delay: 5.6s;
 }
 .home-quality.animated .home-quality__sign #SignBogensperger path:nth-child(9), .home-quality.animated .home-quality__sign #SignBogensperger line:nth-child(9) {
-  animation-delay: 8.1s;
+  animation-delay: 6.1s;
 }
 
 .home-services {
@@ -775,22 +776,22 @@ section {
   animation-name: ScaleX;
 }
 .home-bonus.animated ul li.col1:nth-child(1) i::before, .home-bonus.animated ul li.col1:nth-child(1) i::after {
-  animation-delay: 0.7s;
+  animation-delay: calc( var(--animation-scrolldelay) + 1 * 0.3s );
 }
 .home-bonus.animated ul li.col1:nth-child(2) i::before, .home-bonus.animated ul li.col1:nth-child(2) i::after {
-  animation-delay: 1s;
+  animation-delay: calc( var(--animation-scrolldelay) + 2 * 0.3s );
 }
 .home-bonus.animated ul li.col1:nth-child(3) i::before, .home-bonus.animated ul li.col1:nth-child(3) i::after {
-  animation-delay: 1.3s;
+  animation-delay: calc( var(--animation-scrolldelay) + 3 * 0.3s );
 }
 .home-bonus.animated ul li.col2:nth-child(4) i::before, .home-bonus.animated ul li.col2:nth-child(4) i::after {
-  animation-delay: 1.6s;
+  animation-delay: calc( var(--animation-scrolldelay) + 4 * 0.3s );
 }
 .home-bonus.animated ul li.col2:nth-child(5) i::before, .home-bonus.animated ul li.col2:nth-child(5) i::after {
-  animation-delay: 1.9s;
+  animation-delay: calc( var(--animation-scrolldelay) + 5 * 0.3s );
 }
 .home-bonus.animated ul li.col2:nth-child(6) i::before, .home-bonus.animated ul li.col2:nth-child(6) i::after {
-  animation-delay: 2.2s;
+  animation-delay: calc( var(--animation-scrolldelay) + 6 * 0.3s );
 }
 
 .services {
@@ -947,13 +948,13 @@ section {
   }
 }
 .map.animated .map__map__map {
-  animation: FadeIn 0.4s ease-in-out 0.8s forwards;
+  animation: FadeIn 0.4s ease-in-out var(--animation-scrolldelay) forwards;
 }
 .map.animated .map__map__logo {
-  animation: FadeIn 0.4s ease-in-out 1.4s forwards, FloatY 1.5s linear 1.6s infinite;
+  animation: FadeIn 0.4s ease-in-out calc( var(--animation-scrolldelay) + 0.6s ) forwards, FloatY 1.5s linear calc( var(--animation-scrolldelay) + 0.8s ) infinite;
 }
 .map.animated .map__text {
-  animation: FloatYDown 0.8s var(--animation-bump) 1s forwards, FadeIn 0.6s linear 1s forwards;
+  animation: FloatYDown 0.8s var(--animation-bump) calc( var(--animation-scrolldelay) + 0.2s ) forwards, FadeIn 0.6s linear calc( var(--animation-scrolldelay) + 0.2s ) forwards;
 }
 
 .animated-border {
@@ -983,8 +984,8 @@ section {
 }
 
 .animated .animated-border::before {
-  animation: ScaleX 0.4s var(--animation-border) 0.8s forwards;
+  animation: ScaleX 0.4s var(--animation-border) var(--animation-scrolldelay) forwards;
 }
 .animated .animated-border::after {
-  animation: ScaleY 0.4s var(--animation-border) 1.2s forwards;
+  animation: ScaleY 0.4s var(--animation-border) calc( var(--animation-scrolldelay) + 0.4s ) forwards;
 }

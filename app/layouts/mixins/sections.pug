@@ -56,7 +56,7 @@ mixin sign_Bogensperger()
 
 
 mixin section_services()
-	.services.animated
+	.services
 		.container-content
 			.services__list
 				.services__listcontent
@@ -88,9 +88,11 @@ mixin section_services()
 						}, false);	
 				});
 
+				animateScroll('.services');
+
 
 mixin section_map()
-	section.map.animated
+	section.map
 		.container-content
 			.map__map
 				img.map__map__map(src="assets/i/map.png", alt="")
@@ -98,3 +100,6 @@ mixin section_map()
 			.map__text.animated-border
 				h2 Weltweit für Sie vor Ort
 				p Für Sie sind wir überall vor Ort, unabhängig davon, wie komplex und herausfordernd Ihr Neubau, Umbau oder Ihre Sanierung ist: In unseren Zentralen in Österreich, Polen, Tschechien, Rumänien, der Schweiz und überall dort, wo sie uns gerade brauchen, von Europa über Asien und Afrika bis Amerika und gern noch ein kleines Stück weiter.
+		
+		script.
+			animateScroll('.map');

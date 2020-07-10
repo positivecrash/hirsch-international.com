@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Homepage / Hirsch International GMBH</title>
     <link href="assets/css/website_styles.min.css?v=1" rel="stylesheet">
+    <script src="assets/js/website_plugins.min.js?v=1"></script>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
@@ -41,7 +42,7 @@
           </div>
           <div class="row"><span>Wohnen</span><span>Hotels / Büro / Shopping</span><span>Luxury Exklusiv</span></div>
         </section>
-        <section class="home-quality animated">
+        <section class="home-quality">
           <h2>Innenausbau<br/> für herausragende Ergebnisse</h2>
           <div class="home-quality__begin"><span>Beginn</span><span>der Geschichte</span><span class="big">1892</span></div>
           <div class="home-quality__content">
@@ -76,6 +77,10 @@
                   </svg>
             </div>
           </div>
+          <script>
+            animateScroll('.home-quality');
+            
+          </script>
         </section>
       </div>
       <div class="home-services">
@@ -83,7 +88,7 @@
           <h2>Komplettlösungen aus einer Hand</h2>
           <p>Unser Vorteil: Wir verbinden die Schnittstellen zwischen der Gewerke und kümmern uns auch um die Details, damit die Qualität Ihres Projektes stimmt und die terminliche Koordination passt. Sie haben weniger Arbeit, weniger Sorgen, keine Extrakosten und nur einen Ansprechpartner.</p>
         </div>
-            <div class="services animated">
+            <div class="services">
               <div class="container-content">
                 <div class="services__list">
                   <div class="services__listcontent"><a href="" data-img="service-1.jpg">Projekt- und Baumanagement</a><a href="">Trockenbau</a><a href="">Stuck- und Putzarbeiten (Farbe & Struktur)</a><a href="">Malerarbeiten</a><a href="">Bodenlegearbeiten</a><a href="">Bodenbeschichtungen</a><a href="">Fliesenlegearbeiten</a><a href="">Tischlerarbeiten</a><a href="">Wärmedämmung</a><a href="">Fassadentechnik</a></div>
@@ -102,6 +107,8 @@
                   		}, false);	
                   });
                   
+                  animateScroll('.services');
+                  
                   
                 </script>
               </div>
@@ -118,7 +125,7 @@
           <div class="home-recommendations__btn"><a class="btn-bordered" href="">alle  >>></a></div>
         </div>
       </section>
-      <section class="home-bonus animated">
+      <section class="home-bonus">
         <div>
           <h2><span>Ihre<br/>Vorteile</span></h2>
           <ul>
@@ -130,8 +137,13 @@
             <li class="col2"><i></i><span>Garantieren Verlässlichkeit und Menschlichkeit</span></li>
           </ul>
         </div>
+        <script>
+          animateScroll('.home-bonus');
+          
+          
+        </script>
       </section>
-          <section class="map animated">
+          <section class="map">
             <div class="container-content">
               <div class="map__map"><img class="map__map__map" src="assets/i/map.png" alt=""><img class="map__map__logo" src="assets/i/Hirsch-Logo-Small.svg" alt=""></div>
               <div class="map__text animated-border">
@@ -139,6 +151,7 @@
                 <p>Für Sie sind wir überall vor Ort, unabhängig davon, wie komplex und herausfordernd Ihr Neubau, Umbau oder Ihre Sanierung ist: In unseren Zentralen in Österreich, Polen, Tschechien, Rumänien, der Schweiz und überall dort, wo sie uns gerade brauchen, von Europa über Asien und Afrika bis Amerika und gern noch ein kleines Stück weiter.</p>
               </div>
             </div>
+            <script>animateScroll('.map');</script>
           </section>
     </main>
     <footer role="contentinfo">

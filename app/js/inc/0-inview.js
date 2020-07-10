@@ -1,6 +1,3 @@
-window.addEventListener('load', function(){
-
-}, false);
 function inView(el) {
   var rect = el.getBoundingClientRect();
   var elemTop = rect.top;

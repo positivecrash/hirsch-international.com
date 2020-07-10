@@ -48,8 +48,6 @@
         margin: 30px auto 0;
     }
 
-    $delay_begin: 1s;
-
     &__begin {
         position: absolute;
         top: 76px;
@@ -122,11 +120,12 @@
     }
 
     &.animated {
+
         .home-quality__begin {
-            animation: FadeIn .8s linear $delay_begin forwards;
+            animation: FadeIn .8s linear var(--animation-scrolldelay) forwards;
 
             &::after {
-                animation: Rhombus $delay_begin linear .6s forwards, FadeIn .6s linear .5s forwards; 
+                animation: Rhombus .6s linear var(--animation-scrolldelay) forwards, FadeIn .6s linear var(--animation-scrolldelay) forwards; 
             }
         }
 
@@ -137,7 +136,7 @@
             padding-top: 50px;
     
             $dashoffset: 600;
-            $delay: .5s + $delay_begin;
+            $delay_sign: .5s;
             $duration: 1.2s;
     
             @keyframes sign {
@@ -162,7 +161,7 @@
     
             #SignHirsch path {
                 @for $i from 1 through 9 {
-                    &:nth-child(#{$i}) { animation-delay: $delay + $i*0.2s; }
+                    &:nth-child(#{$i}) { animation-delay: calc(var(--animation-scrolldelay) + #{$delay_sign} + #{$i}*0.2s); }
                 }
             }
     
@@ -170,7 +169,7 @@
                 path, line {
     
                     @for $i from 1 through 9 {
-                        &:nth-child(#{$i}) { animation-delay: $delay*2 + 0.2*3 + $i*0.5s; }
+                        &:nth-child(#{$i}) { animation-delay: $delay_sign*2 + 0.2*3 + $i*0.5s; }
                     }
                 }
             }
@@ -339,7 +338,6 @@
     }
 
     &.animated {
-        $delay_bonus: 0.4s;
 
         &::before, h2::before {
             animation-name: ScaleX;
@@ -370,7 +368,7 @@
                 @for $i from 1 through 3 {
                     &:nth-child(#{$i}) i {
                         &::before, &::after {
-                            animation-delay: $delay_bonus + $i*$duration_bonus;
+                            animation-delay: calc( var(--animation-scrolldelay) + #{$i} * #{$duration_bonus} );
                         }
                     }
                 }
@@ -380,7 +378,7 @@
                 @for $i from 4 through 6 {
                     &:nth-child(#{$i}) i {
                         &::before, &::after {
-                            animation-delay: $delay_bonus + $i*$duration_bonus;
+                            animation-delay: calc( var(--animation-scrolldelay) + #{$i} * #{$duration_bonus} );
                         }
                     }
                 }
