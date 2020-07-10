@@ -32,16 +32,16 @@
     }
 
     &__map {
-        max-height: 380px;
+        // max-height: 380px;
         margin-top: 120px;
         text-align: center;
         position: relative;
 
         &__map {
             @extend %hidden;
-            display: inline-block;
+            display: block;
             max-width: 100%;
-            max-height: 100%;
+            // max-height: 100%;
         }
 
         &__logo {
