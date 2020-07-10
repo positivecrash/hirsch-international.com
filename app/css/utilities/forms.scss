@@ -1,4 +1,4 @@
-.btn-bordered {
+.btn-bordered, .btn-orange {
     display: inline-block;
     @extend %link_noline;
     appearance: none;
@@ -15,5 +15,14 @@
     &:hover {
         background-color: var(--color-orange);
         color: var(--color-body);
+    }
+}
+
+.btn-orange {
+    background-color: var(--color-orange);
+    color: var(--color-body);
+
+    &:hover {
+        opacity: .8;
     }
 }
