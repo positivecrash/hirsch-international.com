@@ -12,7 +12,9 @@ var gulp             = require('gulp'),
     ttf2eot          = require('gulp-ttf2eot'),
     ttf2woff         = require('gulp-ttf2woff'),
 
-    iconfont         = require('gulp-iconfont');
+    iconfont         = require('gulp-iconfont'),
+    
+    jimp             = require('gulp-jimp');
 
 
 var path = {
@@ -39,7 +41,11 @@ var path = {
     filename:{
         css: 'website_styles',
         js: 'website_plugins.js',
-        fonticons: 'iconfont'
+        imgcrop: '-thumbnail'
+    },
+
+    settings: {
+        imgcrop: { scale: 0.2, blur: 1, brightness: 0.5 }
     }
 
 }
@@ -87,16 +93,10 @@ gulp.task('layouts', function() {
 
 
 
-gulp.task('iconfont', function(){
-    return gulp.src([path.file.fonticons])
-    .pipe(iconfont({
-      fontName: path.filename.fonticons, // required
-      formats: ['ttf', 'eot', 'woff'],
-      normalize: true,
-      fontHeight: 1000,
-      prependUnicode: true
-     }))
-    .pipe(gulp.dest(path.folder.fonts));
+gulp.task('cropimg', function () {
+    gulp.src('./dist/assets/i/Hirsch-Social.png').pipe(jimp({
+        [path.filename.imgcrop]: path.settings.imgcrop
+    })).pipe(gulp.dest('./dist/assets/i/'));
 });
 
 
@@ -113,10 +113,10 @@ gulp.task('watch', function() {
 	gulp.watch(path.file.layoutsall, ['layouts']);
 
     // font icons
-	gulp.watch(path.file.fonticons, ['iconfont']);
+	gulp.watch(path.file.fonticons, ['cropimg']);
 
 });
 
 
 //default
-gulp.task('default', ['css', 'js', 'layouts', 'iconfont', 'watch']);
+gulp.task('default', ['css', 'js', 'layouts', 'cropimg', 'watch']);

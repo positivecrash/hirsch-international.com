@@ -7,7 +7,7 @@ mixin headerTop()
 				a(href="").header__menu__links__item Über uns
 
 			.row.logo
-				a(href=""): img(src="assets/i/Hirsch-Logo.svg", alt="HIRSCH INTERNATIONAL GMBH LOGOTYPE")
+				a(href=""): img(src="assets/i/Hirsch-Logo-thumbnail.png", srcset="assets/i/Hirsch-Logo.svg", alt="Hirsch International GMBH Logotype", loading="lazy", width="120px")
 				
 			.row.header__menu__links
 				a(href="").header__menu__links__item Team
@@ -95,8 +95,9 @@ mixin section_map()
 	section.map
 		.container-content
 			.map__map
-				img.map__map__map(src="assets/i/map.png", alt="")
-				img.map__map__logo(src="assets/i/Hirsch-Logo-Small.svg", alt="")
+				//- img.map__map__map(src="assets/i/map.png", srcset="assets/i/map.gif", alt="")
+				img.map__map__map(src="assets/i/map-thumbnail.png", srcset="assets/i/map.gif", alt="Geographie, Unsere Büros auf der ganzen Welt", loading="lazy", width="100%")
+				img.map__map__logo(src="assets/i/Hirsch-Logo-Small-thumbnail.png", srcset="assets/i/Hirsch-Logo-Small.svg", alt="Hirsch International", loading="lazy", width="36px")
 			.map__text.animated-border
 				h2 Weltweit für Sie vor Ort
 				p Für Sie sind wir überall vor Ort, unabhängig davon, wie komplex und herausfordernd Ihr Neubau, Umbau oder Ihre Sanierung ist: In unseren Zentralen in Österreich, Polen, Tschechien, Rumänien, der Schweiz und überall dort, wo sie uns gerade brauchen, von Europa über Asien und Afrika bis Amerika und gern noch ein kleines Stück weiter.
