@@ -58,6 +58,8 @@ body {
   --animation-bump: cubic-bezier(0.6, 0.04, 0.98, 0.335);
   --animation-border: cubic-bezier(0.6, 0.04, 0.98, 0.335);
   --animation-scrolldelay: 1.5s;
+  --animation-appeardelay: 0.1s;
+  --animation-appearduration: 0.8s;
 }
 
 /*====== Fonts ======*/
@@ -69,9 +71,22 @@ body {
   text-decoration: none !important;
 }
 
-.home-quality__begin, .home-quality__begin::after, .map__text, .map__map__map, .map__map__logo {
+.header.header-home .header-home__video video, .home-quality__begin, .home-quality__begin::after, .map__text, .map__map__map, .map__map__logo {
   visibility: hidden;
   opacity: 0;
+}
+
+.home-specialization, .home-quality, .home-services, .home-services .services, .home-recommendations, .home-bonus, .map {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10%);
+}
+.animated.home-specialization, .animated.home-quality, .animated.home-services, .home-services .animated.services, .animated.home-recommendations, .animated.home-bonus, .animated.map {
+  animation-name: FadeIn, FloatYUp;
+  animation-duration: var(--animation-appearduration);
+  animation-timing-function: linear;
+  animation-delay: var(--animation-appeardelay);
+  animation-fill-mode: forwards;
 }
 
 html {
@@ -178,6 +193,14 @@ a {
 @keyframes FloatYDown {
   0% {
     transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes FloatYUp {
+  0% {
+    transform: translateY(10%);
   }
   100% {
     transform: translateY(0);
@@ -368,6 +391,9 @@ a {
   height: auto;
   z-index: 0;
 }
+.header.header-home .header-home__video.animated video {
+  animation: FadeIn var(--animation-appearduration) linear var(--animation-appeardelay) forwards;
+}
 
 .footer {
   background-color: var(--color-text);
@@ -391,6 +417,11 @@ a {
   grid-template-columns: repeat(4, 1fr);
   margin-bottom: 50px;
 }
+@media screen and (max-width: 600px) {
+  .footer__content__nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 .footer__content__contact {
   display: grid;
   grid-auto-flow: row;
@@ -412,6 +443,12 @@ a {
 }
 .footer__content__techinfo a:last-child, .footer__content__techinfo span:last-child {
   margin-right: 0;
+}
+@media screen and (max-width: 600px) {
+  .footer__content__techinfo a, .footer__content__techinfo span {
+    display: block;
+    margin-right: 0;
+  }
 }
 .footer__socials {
   border-right: 1px solid var(--color-gray);

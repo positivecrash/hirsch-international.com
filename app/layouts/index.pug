@@ -10,16 +10,19 @@ block content
 	.container-content-narrow
 		section.home-specialization
 			.row
-				img(src="assets/i/specialization-1-thumbnail.png", srcset="assets/i/specialization-1@2x.png", alt="Wohnen Thumbnail", loading="lazy", width="160.72px")
+				img(src="assets/i/specialization-1-thumbnail.png", srcset="assets/i/specialization-1@2x.png", alt="Wohnen Thumbnail", loading="lazy", width="162px")
 				p Wohnen
-				img(src="assets/i/specialization-2-thumbnail.png", srcset="assets/i/specialization-2@2x.png", alt="Hotels / Büro / Shopping Thumbnail", loading="lazy", width="113.5px")
+				img(src="assets/i/specialization-2-thumbnail.png", srcset="assets/i/specialization-2@2x.png", alt="Hotels / Büro / Shopping Thumbnail", loading="lazy", width="115px")
 				p Hotels / Büro / Shopping
-				img(src="assets/i/specialization-3-thumbnail.png", srcset="assets/i/specialization-3@2x.png", alt="Luxury Exklusiv Thumbnail", loading="lazy", width="158.44px")
+				img(src="assets/i/specialization-3-thumbnail.png", srcset="assets/i/specialization-3@2x.png", alt="Luxury Exklusiv Thumbnail", loading="lazy", width="160px")
 				p Luxury Exklusiv
 			.row
 				span Wohnen
 				span Hotels / Büro / Shopping
 				span Luxury Exklusiv
+
+		script.
+			animateScroll('.home-specialization');
 	
 		section.home-quality
 			h2 Innenausbau<br/> für herausragende Ergebnisse
@@ -44,6 +47,9 @@ block content
 			p Unser Vorteil: Wir verbinden die Schnittstellen zwischen der Gewerke und kümmern uns auch um die Details, damit die Qualität Ihres Projektes stimmt und die terminliche Koordination passt. Sie haben weniger Arbeit, weniger Sorgen, keine Extrakosten und nur einen Ansprechpartner.
 		+section_services()
 
+		script.
+			animateScroll('.home-services');
+
 	section.home-recommendations
 		.container-content
 			h2 Unsere Referenzen
@@ -66,6 +72,8 @@ block content
 			.home-recommendations__btn
 				a.btn-bordered(href="") alle  >>>
 				
+		script.
+			animateScroll('.home-recommendations');
 
 	section.home-bonus
 		div

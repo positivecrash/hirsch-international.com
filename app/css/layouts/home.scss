@@ -12,6 +12,7 @@
     letter-spacing: 0.5px;
     font-size: calc(var(--font-size-text) + 6px);
     font-weight: 600;
+    @extend %showUp;
 
     .row {
         display: grid;
@@ -42,6 +43,7 @@
     text-align: center;
     font-size: calc(var(--font-size-text) + 2px);
     position: relative;
+    @extend %showUp;
 
     h2 {
         max-width: 320px;
@@ -182,8 +184,6 @@
                 }
             }
         }
-
-        
     }
 }
 
@@ -191,6 +191,7 @@
 .home-services {
     padding: 40px 0 5px;
     background-color: var(--color-gray-light);
+    @extend %showUp;
 
     &__text {
         max-width: 850px;
@@ -210,11 +211,14 @@
 
     .services {
         margin: 50px 0;
+        @extend %showUp;
     }
 }
 
 
 .home-recommendations {
+    @extend %showUp;
+
     &__btn {
         text-align: center;
         margin-top: 40px;
@@ -224,6 +228,7 @@
 .home-bonus {
     $duration_bonus: 0.3s;
     position: relative;
+    @extend %showUp;
 
     &::before {
         content: "";

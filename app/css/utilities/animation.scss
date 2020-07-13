@@ -80,3 +80,12 @@
 		transform: translateY(0);
 	}
 }
+
+@keyframes FloatYUp {
+	0% {
+		transform: translateY(10%);
+	}
+	100%{
+		transform: translateY(0);
+	}
+}

@@ -173,6 +173,14 @@
 				width: auto;
 				height: auto;
 				z-index: 0;
+
+				@extend %hidden;
+			}
+
+			&.animated {
+				video {
+					animation: FadeIn var(--animation-appearduration) linear var(--animation-appeardelay) forwards;
+				}
 			}
 		}
 	}

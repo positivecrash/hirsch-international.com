@@ -1,6 +1,7 @@
 .map {
     position: relative;
     padding-bottom: 70px;
+    @extend %showUp;
 
     &::after {
         content: "";

@@ -45,7 +45,7 @@ var path = {
     },
 
     settings: {
-        imgcrop: { scale: 0.2, blur: 1, brightness: 0.5 }
+        imgcrop: { scale: 0.2, gaussian: 4 }
     }
 
 }
@@ -94,9 +94,33 @@ gulp.task('layouts', function() {
 
 
 gulp.task('cropimg', function () {
-    gulp.src('./dist/assets/i/Hirsch-Social.png').pipe(jimp({
-        [path.filename.imgcrop]: path.settings.imgcrop
-    })).pipe(gulp.dest('./dist/assets/i/'));
+    gulp
+    .src(path.folder.image + 'Hirsch-Social.png')
+    .pipe(jimp({ [path.filename.imgcrop]: path.settings.imgcrop })).pipe(gulp.dest(path.folder.image));
+
+    gulp
+    .src(path.folder.image + 'Hirsch-Logo.png')
+    .pipe(jimp({ [path.filename.imgcrop]: path.settings.imgcrop })).pipe(gulp.dest(path.folder.image));
+
+    gulp
+    .src(path.folder.image + 'Hirsch-Logo-Small.png')
+    .pipe(jimp({ [path.filename.imgcrop]: path.settings.imgcrop })).pipe(gulp.dest(path.folder.image));
+
+    gulp
+    .src(path.folder.image + 'map.png')
+    .pipe(jimp({ [path.filename.imgcrop]: path.settings.imgcrop })).pipe(gulp.dest(path.folder.image));
+
+    gulp
+    .src(path.folder.image + 'specialization-1.png')
+    .pipe(jimp({ [path.filename.imgcrop]: path.settings.imgcrop })).pipe(gulp.dest(path.folder.image));
+
+    gulp
+    .src(path.folder.image + 'specialization-2.png')
+    .pipe(jimp({ [path.filename.imgcrop]: path.settings.imgcrop })).pipe(gulp.dest(path.folder.image));
+
+    gulp
+    .src(path.folder.image + 'specialization-3.png')
+    .pipe(jimp({ [path.filename.imgcrop]: path.settings.imgcrop })).pipe(gulp.dest(path.folder.image));
 });
 
 
@@ -112,11 +136,14 @@ gulp.task('watch', function() {
 	// //watch .pug files
 	gulp.watch(path.file.layoutsall, ['layouts']);
 
-    // font icons
-	gulp.watch(path.file.fonticons, ['cropimg']);
-
 });
 
 
 //default
-gulp.task('default', ['css', 'js', 'layouts', 'cropimg', 'watch']);
+gulp.task('default', [
+    'css',
+    'js',
+    'layouts',
+    // 'cropimg',
+    'watch'
+]);
