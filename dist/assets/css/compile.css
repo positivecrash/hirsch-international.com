@@ -363,19 +363,8 @@ a {
   overflow: hidden;
   min-height: 100%;
   box-sizing: border-box;
-}
-.header.header-home .header-home__title {
-  height: 100%;
-}
-.header.header-home .header-home__title h1 {
-  text-align: center;
-  color: #ffffff;
-  font-size: calc(var(--font-size-text) + 32px);
-  position: absolute;
-  bottom: 100px;
-  left: 0;
-  right: 0;
-  z-index: 1;
+  display: grid;
+  grid-template-rows: auto 1fr;
 }
 .header.header-home .header-home__video {
   position: relative;
@@ -393,6 +382,16 @@ a {
 }
 .header.header-home .header-home__video.animated video {
   animation: FadeIn var(--animation-appearduration) linear var(--animation-appeardelay) forwards;
+}
+.header.header-home .header-home__video h1 {
+  text-align: center;
+  color: #ffffff;
+  font-size: calc(var(--font-size-text) + 32px);
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  right: 0;
+  z-index: 1;
 }
 
 .footer {
@@ -496,6 +495,19 @@ html, body {
 body {
   opacity: 0;
   animation: 0.4s FadeIn ease-in forwards;
+}
+
+html:not([class*='home']) {
+  height: 100%;
+}
+html:not([class*='home']) body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+html:not([class*='home']) .footer {
+  grid-row-start: 3;
+  grid-row-end: 4;
 }
 
 /*====== Set width of container ======*/

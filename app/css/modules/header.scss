@@ -145,20 +145,8 @@
 		min-height: 100%;
 		box-sizing: border-box;
 
-		.header-home__title {
-			height: 100%;
-
-			h1 {
-				text-align: center;
-				color: #ffffff;
-				font-size: calc(var(--font-size-text) + 32px);
-				position: absolute;
-				bottom: 100px;
-				left: 0;
-				right: 0;
-				z-index: 1;
-			}
-		}
+		display: grid;
+		grid-template-rows: auto 1fr;
 
 		.header-home__video {
 			position: relative;
@@ -181,6 +169,17 @@
 				video {
 					animation: FadeIn var(--animation-appearduration) linear var(--animation-appeardelay) forwards;
 				}
+			}
+
+			h1 {
+				text-align: center;
+				color: #ffffff;
+				font-size: calc(var(--font-size-text) + 32px);
+				position: absolute;
+				bottom: 10%;
+				left: 0;
+				right: 0;
+				z-index: 1;
 			}
 		}
 	}
