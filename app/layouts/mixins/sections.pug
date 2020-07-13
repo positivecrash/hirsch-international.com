@@ -56,25 +56,26 @@ mixin sign_Bogensperger()
 
 
 mixin section_services()
-	.services
-		.container-content
-			.services__list
-				.services__listcontent
-					a(href="", data-img="service-1.jpg") Projekt- und Baumanagement
-					a(href="") Trockenbau
-					a(href="") Stuck- und Putzarbeiten (Farbe & Struktur)
-					a(href="") Malerarbeiten
-					a(href="") Bodenlegearbeiten
+	section
+		.services
+			.container-content
+				.services__list
+					.services__listcontent
+						a(href="", data-img="service-1.jpg") Projekt- und Baumanagement
+						a(href="") Trockenbau
+						a(href="") Stuck- und Putzarbeiten (Farbe & Struktur)
+						a(href="") Malerarbeiten
+						a(href="") Bodenlegearbeiten
 
-					a(href="") Bodenbeschichtungen
-					a(href="") Fliesenlegearbeiten
-					a(href="") Tischlerarbeiten
-					a(href="") Wärmedämmung
-					a(href="") Fassadentechnik
-				
-				.services__border.animated-border
+						a(href="") Bodenbeschichtungen
+						a(href="") Fliesenlegearbeiten
+						a(href="") Tischlerarbeiten
+						a(href="") Wärmedämmung
+						a(href="") Fassadentechnik
+					
+					.services__border.animated-border
 
-			.services__image
+				.services__image
 
 			script.
 				var services = document.querySelectorAll('[data-img]');

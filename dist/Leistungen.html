@@ -26,6 +26,45 @@
           </div>
     </header>
     <main class="home" role="main">
+      <section class="container-content-narrow">
+        <h1>Leistungen</h1>
+        <h2>Innenaubau aus einer Hand</h2>
+        <h3>Ihr Projekt in besten Händen</h3>
+        <p>Sie brauchen jemanden, der Ihr Projekt optimal realisiert, den Ablauf einer Baustelle perfekt kennt und dafür sorgt, dass alles bestens abläuft. Wir haben jahrzehntelange Erfahrung auf diesem Gebiet, wissen, worauf es ankommt, was wie funktioniert und was zu tun ist, wenn etwas nicht funktioniert. </p>
+        <p>Sie haben in uns einen Partner, der sein Handwerk von der Pike auf gelernt hat, bekommen europäische Handwerksqualität von Profis, die Meister ihres Fachs sind und Ihr Projekt behandeln, als wäre es unser eigenes und einziges.</p>
+      </section>
+          <section>
+            <div class="services">
+              <div class="container-content">
+                <div class="services__list">
+                  <div class="services__listcontent"><a href="" data-img="service-1.jpg">Projekt- und Baumanagement</a><a href="">Trockenbau</a><a href="">Stuck- und Putzarbeiten (Farbe & Struktur)</a><a href="">Malerarbeiten</a><a href="">Bodenlegearbeiten</a><a href="">Bodenbeschichtungen</a><a href="">Fliesenlegearbeiten</a><a href="">Tischlerarbeiten</a><a href="">Wärmedämmung</a><a href="">Fassadentechnik</a></div>
+                  <div class="services__border animated-border"></div>
+                </div>
+                <div class="services__image"></div>
+              </div>
+              <script>
+                var services = document.querySelectorAll('[data-img]');
+                var img = document.querySelector('.services__image');
+                services.forEach(function(item, index, array) {
+                	item.addEventListener("mouseenter", function( event ) {
+                			img.style.backgroundImage = "url('assets/i/services/"+event.target.dataset.img+"')";
+                		}, false);
+                	item.addEventListener("mouseleave", function( event ) {
+                			img.style.backgroundImage = "url('assets/i/services/service-default.jpg')";
+                		}, false);	
+                });
+                
+                animateScroll('.services');
+                
+                
+              </script>
+            </div>
+          </section>
+      <section class="container-content-narrow">
+        <h3>Gesamtplanung Innenausbau bei Neubau, Umbau, Sanierung</h3>
+        <p>Wir verbinden die Schnittstellen zwischen den Gewerken: Durch unsere Gesamtplanung verringern sich Transport- und Zeitrisiken, werden Bauzeiten kürzer und verbessern sich die Abwicklung und das Gesamtergebnis Ihres Projektes. Das spart Ihnen Arbeit, Sorgen, Extrakosten und macht Ihr Projekt wesentlich angenehmer.</p>
+        <p><strong>Fordern Sie uns heraus, wir helfen Ihnen Ihr Projekt zu verwirklichen und liefern herausragende Ergebnisse für herausragende Projekte.</strong></p>
+      </section>
     </main>
     <footer class="footer" role="contentinfo">
       <div class="container-content">

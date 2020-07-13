@@ -2,8 +2,21 @@ extends extends/layout.pug
 include mixins/sections.pug
 
 block html
-	- var meta_title = 'Leistungen'
-	- var page_layout = 'default'
-	- var bodyclass = ''
+    - var meta_title = 'Leistungen'
+    - var page_layout = 'default'
+    - var bodyclass = ''
 
 block content
+    section.container-content-narrow
+        h1 Leistungen
+        h2 Innenaubau aus einer Hand
+        h3 Ihr Projekt in besten Händen
+        p Sie brauchen jemanden, der Ihr Projekt optimal realisiert, den Ablauf einer Baustelle perfekt kennt und dafür sorgt, dass alles bestens abläuft. Wir haben jahrzehntelange Erfahrung auf diesem Gebiet, wissen, worauf es ankommt, was wie funktioniert und was zu tun ist, wenn etwas nicht funktioniert. 
+        p Sie haben in uns einen Partner, der sein Handwerk von der Pike auf gelernt hat, bekommen europäische Handwerksqualität von Profis, die Meister ihres Fachs sind und Ihr Projekt behandeln, als wäre es unser eigenes und einziges.
+    
+    +section_services()
+
+    section.container-content-narrow
+        h3 Gesamtplanung Innenausbau bei Neubau, Umbau, Sanierung
+        p Wir verbinden die Schnittstellen zwischen den Gewerken: Durch unsere Gesamtplanung verringern sich Transport- und Zeitrisiken, werden Bauzeiten kürzer und verbessern sich die Abwicklung und das Gesamtergebnis Ihres Projektes. Das spart Ihnen Arbeit, Sorgen, Extrakosten und macht Ihr Projekt wesentlich angenehmer.
+        p: strong Fordern Sie uns heraus, wir helfen Ihnen Ihr Projekt zu verwirklichen und liefern herausragende Ergebnisse für herausragende Projekte.

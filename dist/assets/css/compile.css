@@ -55,6 +55,7 @@ body {
   --color-orange: #F06400;
   --color-darkblue: #2F3545;
   --space-side: 20px;
+  --space-section: 100px;
   --animation-bump: cubic-bezier(0.6, 0.04, 0.98, 0.335);
   --animation-border: cubic-bezier(0.6, 0.04, 0.98, 0.335);
   --animation-scrolldelay: 1.5s;
@@ -114,14 +115,23 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:la
   margin-bottom: 0;
 }
 
-h1, h2 {
-  font-weight: 400;
+h1 {
+  font-weight: 600;
+  color: var(--color-orange);
+  font-family: var(--font-family-text);
+  font-size: calc(var(--font-size-text) + 11px);
 }
 
 h2 {
-  font-weight: 300;
   font-size: calc(var(--font-size-text) + 18px);
   color: var(--color-darkblue);
+  letter-spacing: 2px;
+}
+
+h3 {
+  font-family: var(--font-family-text);
+  color: var(--color-orange);
+  font-size: calc(var(--font-size-text) + 7px);
 }
 
 ul, ol, li, p, blockquote {
@@ -386,6 +396,8 @@ a {
 .header.header-home .header-home__video h1 {
   text-align: center;
   color: #ffffff;
+  font-family: var(--font-family-headings);
+  font-weight: 400;
   font-size: calc(var(--font-size-text) + 32px);
   position: absolute;
   bottom: 10%;
@@ -510,6 +522,13 @@ html:not([class*='home']) .footer {
   grid-row-end: 4;
 }
 
+html.default main {
+  padding-bottom: var(--space-section);
+}
+html.default main section:first-child {
+  margin-top: calc(var(--space-section)/2);
+}
+
 /*====== Set width of container ======*/
 .container-full {
   width: 100%;
@@ -560,8 +579,8 @@ html:not([class*='home']) .footer {
 }
 
 section {
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: var(--space-section);
+  margin-bottom: var(--space-section);
 }
 
 .home > section:last-child {

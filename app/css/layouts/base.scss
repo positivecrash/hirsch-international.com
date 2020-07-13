@@ -29,6 +29,16 @@ html:not([class*='home']) {
   }
 }
 
+html.default {
+  main {
+    section:first-child {
+      margin-top: calc(var(--space-section)/2);
+    }
+
+    padding-bottom: var(--space-section);
+  }
+}
+
 
 
 /*====== Set width of container ======*/
@@ -61,6 +71,6 @@ html:not([class*='home']) {
 
 
 section {
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: var(--space-section);
+  margin-bottom: var(--space-section);
 }
