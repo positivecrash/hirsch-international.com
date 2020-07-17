@@ -123,6 +123,95 @@
           
         </script>
       </div>
+      <section class="home-works">
+        <h2 class="container-content">Exklusive Werke</h2>
+        <div class="home-works__slider splide" id="splide">
+          <div class="splide__arrows">
+            <div class="splide__arrow splide__arrow--prev"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27.6px" height="22.9px" xml:space="preserve"><polygon points="27.6,11.1 1.8,11.1 12.2,0.7 11.5,0 0,11.5 11.5,22.9 12.2,22.2 2,12.1 27.6,12.1 "/></svg><span>vor</span></div>
+            <div class="splide__arrow splide__arrow--next"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27.6px" height="22.9px" xml:space="preserve"><polygon points="0,11.1 25.9,11.1 15.5,0.7 16.2,0 27.6,11.5 16.2,22.9 15.5,22.2 25.6,12.1 0,12.1 "/></svg><span>next</span></div>
+          </div>
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide"><img src="assets/i/works/1.jpg" alt="">
+                <div class="splide__slide__desc">
+                  <div>
+                    <h3>Anstriche</h3>
+                  </div>
+                  <div>
+                    <p>Individuelle und durchdachte Farbkonzepte für höchste Spezialanforderungen</p>
+                  </div>
+                </div>
+                <div class="splide__slide__back"></div>
+              </li>
+              <li class="splide__slide"><img src="assets/i/works/2.jpg" alt="">
+                <div class="splide__slide__desc">
+                  <div>
+                    <h3>Slide 2</h3>
+                  </div>
+                  <div>
+                    <p>Individuelle und durchdachte Farbkonzepte für höchste Spezialanforderungen</p>
+                  </div>
+                </div>
+                <div class="splide__slide__back"></div>
+              </li>
+              <li class="splide__slide"><img src="assets/i/works/3.jpg" alt="">
+                <div class="splide__slide__desc">
+                  <div>
+                    <h3>Slide 3</h3>
+                  </div>
+                  <div>
+                    <p>Individuelle und durchdachte Farbkonzepte für höchste Spezialanforderungen</p>
+                  </div>
+                </div>
+                <div class="splide__slide__back"></div>
+              </li>
+            </ul>
+          </div>
+          <div class="home-works__slider__panel">
+            <div class="home-works__slider__panel__numbers" id="splide-numbers"></div>
+          </div>
+        </div>
+        <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.8/dist/css/splide-core.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+        <script>
+          animateScroll('.home-works');
+          
+          function GetIndex(Slider) {
+          	var number = Slider.index + 1;
+          	var numberString = number + ' / ' + Slider.length;
+          	document.querySelector('#splide-numbers').innerHTML = numberString;
+          }
+          
+          document.addEventListener( 'DOMContentLoaded', function () {
+          	
+          	var SliderWorks = new Splide( '#splide', {
+          		type   : 'loop',
+          		fixedHeight: '615px',
+          		autoplay: true,
+          		cover: true,
+          		pagination: false,
+          		padding: {
+          			left : '230px',
+          		},
+          		breakpoints: {
+          			1180: {
+          				padding: {
+          					left : '0',
+          				},
+          			},
+          		}
+          	} ).mount();
+          	
+          	GetIndex(SliderWorks);
+          
+          	SliderWorks.on( 'moved updated', function() {
+          		GetIndex(SliderWorks);
+          	} );
+          	
+          } );
+          
+        </script>
+      </section>
       <section class="home-recommendations">
         <div class="container-content">
           <h2>Unsere Referenzen</h2>

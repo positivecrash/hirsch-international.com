@@ -72,17 +72,17 @@ body {
   text-decoration: none !important;
 }
 
-.header.header-home .header-home__video video, .home-quality__begin, .home-quality__begin::after, .map__text, .map__map__map, .map__map__logo {
+.header.header-home .header-home__video video, .home-quality__begin, .home-quality__begin::after, .home-works .splide__slide .splide__slide__desc div:first-child > *, .home-works .splide__slide .splide__slide__desc div:last-child > *, .map__text, .map__map__map, .map__map__logo {
   visibility: hidden;
   opacity: 0;
 }
 
-.home-specialization, .home-quality, .home-services, .home-services .services, .home-recommendations, .home-bonus, .map {
+.home-specialization, .home-quality, .home-services, .home-services .services, .home-recommendations, .home-bonus, .home-works, .map {
   visibility: hidden;
   opacity: 0;
   transform: translateY(10%);
 }
-.animated.home-specialization, .animated.home-quality, .animated.home-services, .home-services .animated.services, .animated.home-recommendations, .animated.home-bonus, .animated.map {
+.animated.home-specialization, .animated.home-quality, .animated.home-services, .home-services .animated.services, .animated.home-recommendations, .animated.home-bonus, .animated.home-works, .animated.map {
   animation-name: FadeIn, FloatYUp;
   animation-duration: var(--animation-appearduration);
   animation-timing-function: linear;
@@ -954,6 +954,142 @@ section {
 }
 .home-bonus.animated ul li.col2:nth-child(6) i::before, .home-bonus.animated ul li.col2:nth-child(6) i::after {
   animation-delay: calc( var(--animation-scrolldelay) + 6 * 0.3s );
+}
+
+.home-works {
+  /* animate */
+}
+.home-works .home-works__slider__panel, .home-works .splide__slide__back {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 230px;
+}
+.home-works__slider__panel {
+  z-index: 1;
+  left: 230px;
+}
+@media screen and (max-width: 1180px) {
+  .home-works__slider__panel {
+    left: 0;
+  }
+}
+.home-works__slider__panel__numbers {
+  position: absolute;
+  left: 60px;
+  bottom: 120px;
+}
+.home-works .splide__slide__desc {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 360px;
+  height: 208px;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  z-index: 2;
+}
+.home-works .splide__slide__desc > div {
+  color: var(--color-body);
+}
+.home-works .splide__slide__desc > div > * {
+  padding: 30px;
+}
+.home-works .splide__slide__desc > div:first-child {
+  background-color: var(--color-orange);
+}
+.home-works .splide__slide__desc > div:last-child {
+  background-color: rgba(47, 53, 69, 0.8);
+}
+.home-works .splide__slide__desc h3 {
+  color: var(--color-body);
+  font-family: var(--font-family-headings);
+  font-size: calc(var(--font-size-text) + 12px);
+  margin-bottom: 0;
+}
+.home-works .splide__slide__desc p {
+  word-break: break-all;
+}
+.home-works .splide__slide__back {
+  left: 0;
+  z-index: 1;
+  background-color: var(--color-body);
+}
+.home-works .splide__arrows {
+  position: absolute;
+  left: 290px;
+  bottom: 5%;
+  z-index: 10;
+}
+@media screen and (max-width: 1180px) {
+  .home-works .splide__arrows {
+    left: 60px;
+  }
+}
+.home-works .splide__arrow {
+  display: inline-block;
+  vertical-align: middle;
+}
+.home-works .splide__arrow--prev, .home-works .splide__arrow--next {
+  cursor: pointer;
+}
+.home-works .splide__arrow--prev:hover svg, .home-works .splide__arrow--next:hover svg {
+  fill: var(--color-orange);
+}
+.home-works .splide__arrow--prev {
+  margin-right: 40px;
+}
+.home-works .splide__arrow span {
+  display: block;
+  text-align: center;
+}
+.home-works .splide__arrow svg {
+  fill: var(--color-darkblue);
+  transition: all 0.2s linear;
+}
+@media screen and (max-width: 700px) {
+  .home-works .splide__slide__back, .home-works .home-works__slider__panel {
+    top: auto;
+    width: 100%;
+    height: 80px;
+  }
+  .home-works .home-works__slider__panel__numbers {
+    bottom: 20px;
+  }
+  .home-works .splide__arrows {
+    right: 60px;
+    left: auto;
+    bottom: 20px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .home-works .splide__slide__desc {
+    grid-template-columns: 1fr;
+    left: var(--space-side);
+    width: calc(100% - var(--space-side)*2);
+  }
+}
+.home-works .splide__slide .splide__slide__back {
+  transform-origin: 50% 100%;
+  transform: scaleY(0);
+}
+.home-works .splide__slide .splide__slide__desc div:first-child, .home-works .splide__slide .splide__slide__desc div:last-child {
+  transform: scaleX(0);
+}
+.home-works .splide__slide .splide__slide__desc div:first-child {
+  transform-origin: 100% 50%;
+}
+.home-works .splide__slide .splide__slide__desc div:last-child {
+  transform-origin: 0 50%;
+}
+.home-works.animated .splide__slide.is-visible .splide__slide__back {
+  animation: ScaleY var(--animation-appearduration) var(--animation-bump) var(--animation-appeardelay) forwards;
+}
+.home-works.animated .splide__slide.is-visible .splide__slide__desc div:first-child, .home-works.animated .splide__slide.is-visible .splide__slide__desc div:last-child {
+  animation: ScaleX var(--animation-appearduration) var(--animation-bump) var(--animation-appeardelay) forwards;
+}
+.home-works.animated .splide__slide.is-visible .splide__slide__desc div:first-child > *, .home-works.animated .splide__slide.is-visible .splide__slide__desc div:last-child > * {
+  animation: FadeIn calc(var(--animation-appearduration)/2) var(--animation-bump) calc(var(--animation-appeardelay) + var(--animation-appearduration)) forwards;
 }
 
 .services {
