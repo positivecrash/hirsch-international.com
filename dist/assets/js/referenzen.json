@@ -1,0 +1,24 @@
+[
+    {
+        "id":1,
+        "status":"publish",
+        "title": {"rendered":"St. Petersburg"},
+        "acf": {
+            "location":"St. Petersburg, Russland",
+            "client":"zB: ERBUD S.A.",
+            "date":"2017",
+            "works":"zB: Malerarbeiten, Putzarbeiten, Spachtelung"
+        }
+    },
+    {
+        "id":2,
+        "status":"publish",
+        "title": {"rendered":"Hotel Absheron / JW Marriott"},
+        "acf": {
+            "location":"Baku, Aserbaidschan",
+            "client":"zB: ERBUD S.A.",
+            "date":"2014-2015",
+            "works":"zB: Malerarbeiten, Putzarbeiten, Spachtelung"
+        }
+    }
+]

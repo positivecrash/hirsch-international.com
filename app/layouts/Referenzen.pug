@@ -1,0 +1,117 @@
+extends extends/layout.pug
+include mixins/sections.pug
+
+block html
+    - var meta_title = 'Referenzen'
+    - var page_layout = 'default'
+    - var bodyclass = ''
+
+block content
+    section.container-content-narrow.text-center
+        h1 Referenzen
+        p Von uns erhalten Sie herausragende Ergebnisse im wahrsten Sinne des Wortes: Ihr Projekt befindet sich bei uns in besten Händen, selbst und gerade dann, wenn es besonders komplex und herausfordernd ist – freuen Sie sich auf den Ablauf und das Resultat.
+
+
+    section.container-content
+        .works
+            .works__item(data-count="1")
+                a.works__item__cover(href="#"): img(alt="", src="assets/i/referenzen/1/1_cover.jpg")
+                h2.works__item__title: a(href="#") Hotel Hyatt Prag
+                .works__item__desc: a(href="#") Tschechische Republik
+            .works__info test
+
+            .works__item(data-count="2")
+                a.works__item__cover(href="#"): img(alt="", src="assets/i/referenzen/2/1_cover.jpg")
+                h2.works__item__title: a(href="#") militärkrankenhaus indonesien
+                .works__item__desc: a(href="#") Stadt, Land
+            .works__info
+            
+            .works__item(data-count="3")
+                a.works__item__cover(href="#"): img(alt="", src="assets/i/referenzen/3/1_cover.jpg")
+                h2.works__item__title: a(href="#") Hotel Absheron / JW Marriott
+                .works__item__desc: a(href="#") Baku, Aserbaidschan
+            .works__info
+
+            .works__item(data-count="4")
+                a.works__item__cover(href="#"): img(alt="", src="assets/i/referenzen/3/1_cover.jpg")
+                h2.works__item__title: a(href="#") Hotel Absheron
+                .works__item__desc: a(href="#") Baku, Aserbaidschan
+            .works__info
+
+            .works__item(data-count="5")
+                a.works__item__cover(href="#"): img(alt="", src="assets/i/referenzen/1/1_cover.jpg")
+                h2.works__item__title: a(href="#") Hotel Hyatt Prag
+                .works__item__desc: a(href="#") Tschechische Republik
+            .works__info
+
+            .works__item(data-count="6")
+                a.works__item__cover(href="#"): img(alt="", src="assets/i/referenzen/2/1_cover.jpg")
+                h2.works__item__title: a(href="#") militärkrankenhaus
+                .works__item__desc: a(href="#") Stadt, Land
+            .works__info
+
+            .works__item(data-count="7")
+                a.works__item__cover(href="#"): img(alt="", src="assets/i/referenzen/2/1_cover.jpg")
+                h2.works__item__title: a(href="#") militärkrankenhaus indonesien
+                .works__item__desc: a(href="#") Stadt, Land
+            .works__info
+            
+            .works__item(data-count="8")
+                a.works__item__cover(href="#"): img(alt="", src="assets/i/referenzen/3/1_cover.jpg")
+                h2.works__item__title: a(href="#") Hotel Absheron / JW Marriott
+                .works__item__desc: a(href="#") Baku, Aserbaidschan
+            .works__info
+
+            .works__item(data-count="9")
+                a.works__item__cover(href="#"): img(alt="", src="assets/i/referenzen/3/1_cover.jpg")
+                h2.works__item__title: a(href="#") Hotel Absheron / JW Marriott
+                .works__item__desc: a(href="#") Baku, Aserbaidschan
+            .works__info
+
+
+        script.
+            let
+                works = document.querySelectorAll(".works__item"),
+                infoBlocks = document.querySelectorAll(".works__info"),
+                info = document.createElement('div');
+
+            info.className = "works__info";
+
+            works.forEach(function (entry) {
+                entry.addEventListener("click", function (event){
+                    event.preventDefault();
+
+                    infoBlocks.forEach(function(entry) {
+                        entry.style.display = "none";
+                    });
+
+                    //- this.nextElementSibling.style.display = "block";
+                    console.log(this.nextElementSibling.innerHTML);
+                    console.log(this.dataset.count);
+
+                    //- var screen = window.innerWidth;
+
+                    //- this.after(info);
+
+                    //- if (screen < 450) {
+                    //-     this.append(info);
+                    //- }
+                });
+            });
+
+        //- script.
+        //-     var xmlhttp = new XMLHttpRequest();
+        //-     xmlhttp.onreadystatechange = function() {
+        //-         //- if (this.readyState == 4 && this.status == 200) {
+        //-         if (this.readyState == 4) {
+        //-             var Data = JSON.parse(this.responseText);
+        //-             console.log(Data);
+
+        //-             Data.forEach(function(item, index, array) {
+        //-                 console.log(item.title.rendered);
+        //-                 document.getElementById("works").innerHTML = ""
+        //-             });
+        //-         }
+        //-     };
+        //-     xmlhttp.open("GET", "assets/js/referenzen.json", true);
+        //-     xmlhttp.send();

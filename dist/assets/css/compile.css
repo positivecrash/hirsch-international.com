@@ -67,7 +67,7 @@ body {
 /*====== Margins, paddings ======*/
 /*====== Bootstrap ======*/
 /*====== Media queries ======*/
-.btn-bordered, .btn-orange, .header__menu__links a, .footer a, .services__listcontent a, .recommendations a.recommendations__item, .btn-bordered:hover, .btn-orange:hover, .header__menu__links a:hover, .footer a:hover, .services__listcontent a:hover, .recommendations a.recommendations__item:hover, .btn-bordered:focus, .btn-orange:focus, .header__menu__links a:focus, .footer a:focus, .services__listcontent a:focus, .recommendations a.recommendations__item:focus, .btn-bordered:visited, .btn-orange:visited, .header__menu__links a:visited, .footer a:visited, .services__listcontent a:visited, .recommendations a.recommendations__item:visited {
+.btn-bordered, .btn-orange, .header__menu__links a, .footer a, .services__listcontent a, .recommendations a.recommendations__item, .works__item a, .btn-bordered:hover, .btn-orange:hover, .header__menu__links a:hover, .footer a:hover, .services__listcontent a:hover, .recommendations a.recommendations__item:hover, .works__item a:hover, .btn-bordered:focus, .btn-orange:focus, .header__menu__links a:focus, .footer a:focus, .services__listcontent a:focus, .recommendations a.recommendations__item:focus, .works__item a:focus, .btn-bordered:visited, .btn-orange:visited, .header__menu__links a:visited, .footer a:visited, .services__listcontent a:visited, .recommendations a.recommendations__item:visited, .works__item a:visited {
   text-decoration: none;
   text-decoration: none !important;
 }
@@ -116,7 +116,7 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:la
 }
 
 h1 {
-  font-weight: 600;
+  font-weight: 700;
   color: var(--color-orange);
   font-family: var(--font-family-text);
   font-size: calc(var(--font-size-text) + 11px);
@@ -143,6 +143,10 @@ ul:last-child, ol:last-child, li:last-child, p:last-child, blockquote:last-child
 
 a {
   transition: all 0.2s ease;
+}
+
+.text-center {
+  text-align: center;
 }
 
 @keyframes FadeOut {
@@ -1183,6 +1187,85 @@ section {
 }
 .recommendations__item strong {
   text-transform: uppercase;
+}
+
+.works {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+.works__info {
+  background: coral;
+  height: 600px;
+  grid-column: 1 / span 3;
+  display: none;
+}
+.works__item {
+  transition: all 0.2s ease;
+  text-align: center;
+}
+.works__item:nth-child(1) ~ .works__info {
+  grid-row: row 1;
+}
+.works__item:nth-child(3) ~ .works__info {
+  grid-row: row 1;
+}
+.works__item:nth-child(5) ~ .works__info {
+  grid-row: row 1;
+}
+@media screen and (max-width: 680px) {
+  .works__item:nth-child(5) ~ .works__info {
+    grid-row: row 2;
+  }
+}
+.works__item:nth-child(7) ~ .works__info {
+  grid-row: row 2;
+}
+.works__item:nth-child(9) ~ .works__info {
+  grid-row: row 2;
+}
+.works__item:nth-child(11) ~ .works__info {
+  grid-row: row 2;
+}
+.works__item:hover {
+  opacity: .6;
+}
+.works__item a {
+  color: var(--color-text);
+}
+.works__item__cover {
+  display: block;
+}
+.works__item__cover img {
+  display: block;
+  max-width: 100%;
+}
+.works__item__title {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: var(--font-size-text);
+  font-family: var(--font-family-text);
+  letter-spacing: 0;
+  margin: 15px 0 5px;
+}
+.works__item__desc {
+  font-style: italic;
+}
+@media screen and (max-width: 680px) {
+  .works {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .works__info {
+    grid-column: 1 / span 2;
+  }
+}
+@media screen and (max-width: 450px) {
+  .works {
+    grid-template-columns: 1fr;
+  }
+  .works__info {
+    grid-column: 1 / 1;
+  }
 }
 
 .map {
