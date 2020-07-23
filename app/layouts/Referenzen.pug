@@ -14,88 +14,91 @@ block content
 
     section.container-content
         .works
-            .works__item(data-count="1")
-                a.works__item__cover(href="#"): img(alt="", src="assets/i/referenzen/1/1_cover.jpg")
-                h2.works__item__title: a(href="#") Hotel Hyatt Prag
-                .works__item__desc: a(href="#") Tschechische Republik
-            .works__info test
+            .works__column
+                .works__item
+                    a.works__item__cover(href="#"): img(alt="", src="assets/i/referenzen/1/1_cover.jpg")
+                    h2.works__item__title: a(href="#") Hotel Hyatt Prag
+                    .works__item__desc: a(href="#") Tschechische Republik
+                .works__info test
 
-            .works__item(data-count="2")
-                a.works__item__cover(href="#"): img(alt="", src="assets/i/referenzen/2/1_cover.jpg")
-                h2.works__item__title: a(href="#") militärkrankenhaus indonesien
-                .works__item__desc: a(href="#") Stadt, Land
-            .works__info
-            
-            .works__item(data-count="3")
-                a.works__item__cover(href="#"): img(alt="", src="assets/i/referenzen/3/1_cover.jpg")
-                h2.works__item__title: a(href="#") Hotel Absheron / JW Marriott
-                .works__item__desc: a(href="#") Baku, Aserbaidschan
-            .works__info
+                .works__item
+                    a.works__item__cover(href="#"): img(alt="", src="assets/i/referenzen/2/1_cover.jpg")
+                    h2.works__item__title: a(href="#") militärkrankenhaus indonesien
+                    .works__item__desc: a(href="#") Stadt, Land
+                .works__info(style="background: crimson")
+                
+                .works__item
+                    a.works__item__cover(href="#"): img(alt="", src="assets/i/referenzen/3/1_cover.jpg")
+                    h2.works__item__title: a(href="#") Hotel Absheron / JW Marriott
+                    .works__item__desc: a(href="#") Baku, Aserbaidschan
+                .works__info(style="background: violet")
 
-            .works__item(data-count="4")
-                a.works__item__cover(href="#"): img(alt="", src="assets/i/referenzen/3/1_cover.jpg")
-                h2.works__item__title: a(href="#") Hotel Absheron
-                .works__item__desc: a(href="#") Baku, Aserbaidschan
-            .works__info
+            .works__column
+                .works__item
+                    a.works__item__cover(href="#"): img(alt="", src="assets/i/referenzen/3/1_cover.jpg")
+                    h2.works__item__title: a(href="#") Hotel Absheron
+                    .works__item__desc: a(href="#") Baku, Aserbaidschan
+                .works__info(style="background: wheat")
 
-            .works__item(data-count="5")
-                a.works__item__cover(href="#"): img(alt="", src="assets/i/referenzen/1/1_cover.jpg")
-                h2.works__item__title: a(href="#") Hotel Hyatt Prag
-                .works__item__desc: a(href="#") Tschechische Republik
-            .works__info
+                .works__item
+                    a.works__item__cover(href="#"): img(alt="", src="assets/i/referenzen/1/1_cover.jpg")
+                    h2.works__item__title: a(href="#") Hotel Hyatt Prag
+                    .works__item__desc: a(href="#") Tschechische Republik
+                .works__info(style="background: seagreen")
 
-            .works__item(data-count="6")
-                a.works__item__cover(href="#"): img(alt="", src="assets/i/referenzen/2/1_cover.jpg")
-                h2.works__item__title: a(href="#") militärkrankenhaus
-                .works__item__desc: a(href="#") Stadt, Land
-            .works__info
+                .works__item
+                    a.works__item__cover(href="#"): img(alt="", src="assets/i/referenzen/2/1_cover.jpg")
+                    h2.works__item__title: a(href="#") militärkrankenhaus
+                    .works__item__desc: a(href="#") Stadt, Land
+                .works__info(style="background: tomato")
 
-            .works__item(data-count="7")
-                a.works__item__cover(href="#"): img(alt="", src="assets/i/referenzen/2/1_cover.jpg")
-                h2.works__item__title: a(href="#") militärkrankenhaus indonesien
-                .works__item__desc: a(href="#") Stadt, Land
-            .works__info
-            
-            .works__item(data-count="8")
-                a.works__item__cover(href="#"): img(alt="", src="assets/i/referenzen/3/1_cover.jpg")
-                h2.works__item__title: a(href="#") Hotel Absheron / JW Marriott
-                .works__item__desc: a(href="#") Baku, Aserbaidschan
-            .works__info
+            .works__column
+                .works__item
+                    a.works__item__cover(href="#"): img(alt="", src="assets/i/referenzen/2/1_cover.jpg")
+                    h2.works__item__title: a(href="#") militärkrankenhaus indonesien
+                    .works__item__desc: a(href="#") Stadt, Land
+                .works__info(style="background: thistle")
+                
+                .works__item
+                    a.works__item__cover(href="#"): img(alt="", src="assets/i/referenzen/3/1_cover.jpg")
+                    h2.works__item__title: a(href="#") Hotel Absheron / JW Marriott
+                    .works__item__desc: a(href="#") Baku, Aserbaidschan
+                .works__info(style="background: darkolivegreen")
 
-            .works__item(data-count="9")
-                a.works__item__cover(href="#"): img(alt="", src="assets/i/referenzen/3/1_cover.jpg")
-                h2.works__item__title: a(href="#") Hotel Absheron / JW Marriott
-                .works__item__desc: a(href="#") Baku, Aserbaidschan
-            .works__info
+                .works__item
+                    a.works__item__cover(href="#"): img(alt="", src="assets/i/referenzen/3/1_cover.jpg")
+                    h2.works__item__title: a(href="#") Hotel Absheron / JW Marriott
+                    .works__item__desc: a(href="#") Baku, Aserbaidschan
+                .works__info(style="background: cornflowerblue")
 
 
         script.
             let
-                works = document.querySelectorAll(".works__item"),
-                infoBlocks = document.querySelectorAll(".works__info"),
-                info = document.createElement('div');
+                list = document.querySelectorAll(".works__item"),
+                data = document.querySelectorAll(".works__info"),
+                active = "active";
 
-            info.className = "works__info";
+            
+            function setActive(obj) {
+                list.forEach(function (entrylist) {
+                    entrylist.classList.remove(active);
+                });
 
-            works.forEach(function (entry) {
+                obj.classList.toggle(active);
+
+                data.forEach(function(entrydata) {
+                    entrydata.classList.remove(active);
+                });
+
+                obj.nextElementSibling.classList.toggle(active);
+            }
+
+
+            list.forEach(function (entry) {
+
                 entry.addEventListener("click", function (event){
                     event.preventDefault();
-
-                    infoBlocks.forEach(function(entry) {
-                        entry.style.display = "none";
-                    });
-
-                    //- this.nextElementSibling.style.display = "block";
-                    console.log(this.nextElementSibling.innerHTML);
-                    console.log(this.dataset.count);
-
-                    //- var screen = window.innerWidth;
-
-                    //- this.after(info);
-
-                    //- if (screen < 450) {
-                    //-     this.append(info);
-                    //- }
+                    setActive(this);
                 });
             });
 
