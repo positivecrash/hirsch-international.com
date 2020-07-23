@@ -67,7 +67,7 @@ body {
 /*====== Margins, paddings ======*/
 /*====== Bootstrap ======*/
 /*====== Media queries ======*/
-.btn-bordered, .btn-orange, .header__menu__links a, .footer a, .services__listcontent a, .recommendations a.recommendations__item, .works__item a, .btn-bordered:hover, .btn-orange:hover, .header__menu__links a:hover, .footer a:hover, .services__listcontent a:hover, .recommendations a.recommendations__item:hover, .works__item a:hover, .btn-bordered:focus, .btn-orange:focus, .header__menu__links a:focus, .footer a:focus, .services__listcontent a:focus, .recommendations a.recommendations__item:focus, .works__item a:focus, .btn-bordered:visited, .btn-orange:visited, .header__menu__links a:visited, .footer a:visited, .services__listcontent a:visited, .recommendations a.recommendations__item:visited, .works__item a:visited {
+.btn-bordered, .btn-orange, .header__menu__links a, .footer a, .services__listcontent a, .recommendations a.recommendations__item, .btn-bordered:hover, .btn-orange:hover, .header__menu__links a:hover, .footer a:hover, .services__listcontent a:hover, .recommendations a.recommendations__item:hover, .btn-bordered:focus, .btn-orange:focus, .header__menu__links a:focus, .footer a:focus, .services__listcontent a:focus, .recommendations a.recommendations__item:focus, .btn-bordered:visited, .btn-orange:visited, .header__menu__links a:visited, .footer a:visited, .services__listcontent a:visited, .recommendations a.recommendations__item:visited {
   text-decoration: none;
   text-decoration: none !important;
 }
@@ -1211,6 +1211,7 @@ section {
 .works__item {
   transition: all 0.2s ease;
   text-align: center;
+  cursor: pointer;
 }
 .works__item:nth-child(1) ~ .works__info {
   grid-row: row 1;
@@ -1224,13 +1225,7 @@ section {
 .works__item:hover {
   opacity: .6;
 }
-.works__item a {
-  color: var(--color-text);
-}
 .works__item__cover {
-  display: block;
-}
-.works__item__cover img {
   display: block;
   max-width: 100%;
 }
@@ -1245,7 +1240,7 @@ section {
 .works__item__desc {
   font-style: italic;
 }
-.works__item.active *[class*="__title"], .works__item.active *[class*="__title"] a {
+.works__item.active *[class*="__title"] {
   color: var(--color-orange);
 }
 @media screen and (max-width: 680px) {
