@@ -26,16 +26,18 @@
     &__item {
         transition: all 0.2s ease;
         text-align: center;
-        cursor: pointer;
+        
+        &:not([class*="active"]) {
+            cursor: pointer;
+
+            &:hover {
+                opacity: .6;
+            }
+        }
 
         &:nth-child(1) ~ .works__info { grid-row: row 1; }
         &:nth-child(2) ~ .works__info { grid-row: row 1; }
         &:nth-child(3) ~ .works__info { grid-row: row 1; }
-
-        
-        &:hover {
-            opacity: .6;
-        }
 
         &__cover {
             display: block;

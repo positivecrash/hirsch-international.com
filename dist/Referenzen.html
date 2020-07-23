@@ -88,7 +88,8 @@
           let
               list = document.querySelectorAll(".works__item"),
               data = document.querySelectorAll(".works__info"),
-              active = "active";
+              active = "active",
+              topScroll = 0;
           
           
           function setActive(obj) {
@@ -96,13 +97,16 @@
                   entrylist.classList.remove(active);
               });
           
-              obj.classList.toggle(active);
-          
               data.forEach(function(entrydata) {
                   entrydata.classList.remove(active);
               });
           
-              obj.nextElementSibling.classList.toggle(active);
+              obj.classList.add(active);
+              obj.nextElementSibling.classList.add(active);
+              
+              //- obj.scrollIntoView({behavior: "smooth"});
+              topScroll = obj.getBoundingClientRect().top + window.pageYOffset - 20;
+              window.scrollTo({top: topScroll, behavior: 'smooth'});
           }
           
           

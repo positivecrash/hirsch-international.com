@@ -1211,7 +1211,12 @@ section {
 .works__item {
   transition: all 0.2s ease;
   text-align: center;
+}
+.works__item:not([class*="active"]) {
   cursor: pointer;
+}
+.works__item:not([class*="active"]):hover {
+  opacity: .6;
 }
 .works__item:nth-child(1) ~ .works__info {
   grid-row: row 1;
@@ -1221,9 +1226,6 @@ section {
 }
 .works__item:nth-child(3) ~ .works__info {
   grid-row: row 1;
-}
-.works__item:hover {
-  opacity: .6;
 }
 .works__item__cover {
   display: block;
