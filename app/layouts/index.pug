@@ -66,19 +66,19 @@ block content
 				ul.splide__list
 					li.splide__slide
 						img(src="assets/i/works/1.jpg", alt="")
-						.splide__slide__desc
+						//- .splide__slide__desc
 							div: h3 Anstriche
 							div: p Individuelle und durchdachte Farbkonzepte für höchste Spezialanforderungen
 						.splide__slide__back
 					li.splide__slide
 						img(src="assets/i/works/2.jpg", alt="")
-						.splide__slide__desc
+						//- .splide__slide__desc
 							div: h3 Slide 2
 							div: p Individuelle und durchdachte Farbkonzepte für höchste Spezialanforderungen
 						.splide__slide__back
 					li.splide__slide
 						img(src="assets/i/works/3.jpg", alt="")
-						.splide__slide__desc
+						//- .splide__slide__desc
 							div: h3 Slide 3
 							div: p Individuelle und durchdachte Farbkonzepte für höchste Spezialanforderungen
 						.splide__slide__back
@@ -97,22 +97,22 @@ block content
 				var numberString = number + ' / ' + Slider.length;
 				document.querySelector('#splide-numbers').innerHTML = numberString;
 			}
-			
+
 			document.addEventListener( 'DOMContentLoaded', function () {
 				
 				var SliderWorks = new Splide( '#splide', {
-					type   : 'loop',
+					type: 'loop',
 					fixedHeight: '615px',
 					autoplay: true,
 					cover: true,
 					pagination: false,
 					padding: {
-						left : '230px',
+						left: '230px',
 					},
 					breakpoints: {
 						1180: {
 							padding: {
-								left : '0',
+								left: '0',
 							},
 						},
 					}

@@ -1,25 +1,98 @@
 .works {
 
     display: grid;
-    grid-template-rows: auto;
+    grid-template-columns: repeat(3, 1fr);
     gap: 50px;
 
-    &__column {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 50px;
-    }
-    
-
     &__info {
-        background: coral;
-        height: 600px;
-        grid-column: 1 / 4;
-    
-        display: none;
+        background: var(--color-body);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        height: 100%;
+        overflow: hidden;
+
+        @extend %hidden;
+        pointer-events: none;
+        // display: none;
 
         &.active {
+            animation: FadeIn 0.2s var(--animation-bump) var(--animation-appeardelay) forwards;
+            // display: block;
+            pointer-events: visible;
+        }
+
+        .close {
             display: block;
+            @extend %link_noline;
+
+            position: absolute;
+            top: calc(var(--space-side) * 2);
+            right: calc(var(--space-side) * 2);
+            width: 29px;
+            height: 29px;
+
+            transform-origin: center center;
+            transform: rotate(45deg);
+
+            @extend %hidden;
+            animation: FadeIn 0.4s var(--animation-bump) var(--animation-appeardelay) forwards;
+            transition: 0.4s ease all;
+
+            &::before, &::after {
+                content: "";
+                position: absolute;
+                background-color: var(--color-gray);
+            }
+            &::after {
+                top: calc(50% - 1px);
+                left: 0;
+                right: 0;
+                height: 2px;
+            }
+
+            &::before {
+                left: calc(50% - 1px);
+                top: 0;
+                bottom: 0;
+                width: 2px;
+            }
+
+            &:hover {
+                &::before, &::after {
+                    background-color: var(--color-orange);
+                }
+
+                opacity: .5;
+            }
+        }
+
+
+        .data {
+            margin-top: calc( var(--space-side) * 4);
+            height: 100%;
+            overflow-y: auto;
+
+            .data__photos, .data__info { 
+                float: left;
+                width: 60%;
+            }
+            
+            .data__info {
+                margin-left: 5%;
+                width: 35%;
+            }
+
+            .data__photos {
+                img { 
+                    display: block;
+                    width : 100%;
+	                height: auto;
+                }
+            }
         }
     }
 
@@ -35,9 +108,6 @@
             }
         }
 
-        &:nth-child(1) ~ .works__info { grid-row: row 1; }
-        &:nth-child(2) ~ .works__info { grid-row: row 1; }
-        &:nth-child(3) ~ .works__info { grid-row: row 1; }
 
         &__cover {
             display: block;
@@ -67,17 +137,6 @@
 
 
     @media screen and (max-width: 680px) {
-        &__column {
-            grid-template-columns: 1fr;
-        }
-
-        &__info {
-            grid-column: 1 / 2;
-        }
-
-        &__item {
-            &:nth-child(3) ~ .works__info { grid-row: row 2; }
-            &:nth-child(5) ~ .works__info { grid-row: row 3; }
-        }
+        grid-template-columns: 1fr;
     }
 }
