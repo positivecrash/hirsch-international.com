@@ -67,7 +67,7 @@ body {
 /*====== Margins, paddings ======*/
 /*====== Bootstrap ======*/
 /*====== Media queries ======*/
-.btn-bordered, .btn-orange, .header__menu__links a, .footer a, .services__listcontent a, .recommendations a.recommendations__item, .works__info .close, .btn-bordered:hover, .btn-orange:hover, .header__menu__links a:hover, .footer a:hover, .services__listcontent a:hover, .recommendations a.recommendations__item:hover, .works__info .close:hover, .btn-bordered:focus, .btn-orange:focus, .header__menu__links a:focus, .footer a:focus, .services__listcontent a:focus, .recommendations a.recommendations__item:focus, .works__info .close:focus, .btn-bordered:visited, .btn-orange:visited, .header__menu__links a:visited, .footer a:visited, .services__listcontent a:visited, .recommendations a.recommendations__item:visited, .works__info .close:visited {
+h1 a, .btn-bordered, .btn-orange, .header__menu__links a, .footer a, .services__listcontent a, .recommendations a.recommendations__item, .works__info .close, h1 a:hover, .btn-bordered:hover, .btn-orange:hover, .header__menu__links a:hover, .footer a:hover, .services__listcontent a:hover, .recommendations a.recommendations__item:hover, .works__info .close:hover, h1 a:focus, .btn-bordered:focus, .btn-orange:focus, .header__menu__links a:focus, .footer a:focus, .services__listcontent a:focus, .recommendations a.recommendations__item:focus, .works__info .close:focus, h1 a:visited, .btn-bordered:visited, .btn-orange:visited, .header__menu__links a:visited, .footer a:visited, .services__listcontent a:visited, .recommendations a.recommendations__item:visited, .works__info .close:visited {
   text-decoration: none;
   text-decoration: none !important;
 }
@@ -117,9 +117,11 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:la
 
 h1 {
   font-weight: 700;
-  color: var(--color-orange);
   font-family: var(--font-family-text);
   font-size: calc(var(--font-size-text) + 11px);
+}
+h1, h1 a {
+  color: var(--color-orange);
 }
 
 h2 {
@@ -269,6 +271,77 @@ a {
 
 .i-location:before {
   content: "";
+}
+
+.bx-wrapper {
+  position: relative;
+  padding: 0;
+  *zoom: 1;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+}
+
+.bx-wrapper img {
+  max-width: 100%;
+  display: block;
+}
+
+.bxslider {
+  margin: 0;
+  padding: 0;
+}
+
+ul.bxslider {
+  list-style: none;
+}
+
+.bx-viewport {
+  /*fix other elements on the page moving (on Chrome)*/
+  -webkit-transform: translatez(0);
+}
+
+.bx-pager {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  text-align: center;
+}
+.bx-pager-item {
+  display: inline-block;
+  margin-left: 10px;
+}
+.bx-pager-item:first-child {
+  margin-left: 0;
+}
+.bx-pager-link {
+  display: block;
+  color: transparent;
+  background-color: var(--color-body);
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+}
+.bx-pager-link.active {
+  background-color: var(--color-orange);
+}
+
+.bx-controls-direction a {
+  fill: none;
+  stroke: var(--color-text);
+  stroke-width: 3;
+  stroke-linecap: round;
+  padding: 16px;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: block;
+  position: absolute;
+  top: calc( 50% - 20.4px);
+}
+.bx-controls-direction a:hover {
+  stroke: var(--color-orange);
+}
+.bx-controls-direction a.bx-next {
+  right: 0;
 }
 
 .header__menu {
@@ -1249,6 +1322,7 @@ section {
   margin-top: calc( var(--space-side) * 4);
   height: 100%;
   overflow-y: auto;
+  padding-right: calc( var(--space-side) * 4);
 }
 .works__info .data .data__photos, .works__info .data .data__info {
   float: left;
@@ -1257,6 +1331,20 @@ section {
 .works__info .data .data__info {
   margin-left: 5%;
   width: 35%;
+}
+.works__info .data .data__info h3 {
+  text-align: left;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+.works__info .data .data__info div {
+  margin-bottom: 40px;
+}
+.works__info .data .data__info div:first-child {
+  margin-bottom: 70px;
+}
+.works__info .data .data__info div strong {
+  display: block;
 }
 .works__info .data .data__photos img {
   display: block;
