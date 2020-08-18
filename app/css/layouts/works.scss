@@ -5,24 +5,27 @@
     gap: 50px;
 
     &__info {
-        background: var(--color-body);
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 10;
-        height: 100%;
-        overflow: hidden;
 
-        @extend %hidden;
-        pointer-events: none;
-        // display: none;
+        &.popup {
+            background: var(--color-body);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 10;
+            height: 100%;
+            overflow: hidden;
 
-        &.active {
-            animation: FadeIn 0.2s var(--animation-bump) var(--animation-appeardelay) forwards;
-            // display: block;
-            pointer-events: visible;
+            @extend %hidden;
+            pointer-events: none;
+            // display: none;
+
+            &.active {
+                animation: FadeIn 0.2s var(--animation-bump) var(--animation-appeardelay) forwards;
+                // display: block;
+                pointer-events: visible;
+            }
         }
 
         .close {

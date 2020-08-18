@@ -7,7 +7,21 @@
             "location":"St. Petersburg, Russland",
             "client":"zB: ERBUD S.A.",
             "date":"2017",
-            "works":"zB: Malerarbeiten, Putzarbeiten, Spachtelung"
+            "works":"Item 1 description for works",
+            "gallery": [
+                {
+                    "id": 1,
+                    "alt": "Test 1",
+                    "small": "assets/i/works/1.jpg",
+                    "large": "assets/i/works/1.jpg"
+                },
+                {
+                    "id": 2,
+                    "alt": "Test 2",
+                    "small": "assets/i/works/2.jpg",
+                    "large": "assets/i/works/2.jpg"
+                }
+            ]
         }
     },
     {
@@ -18,7 +32,21 @@
             "location":"Baku, Aserbaidschan",
             "client":"zB: ERBUD S.A.",
             "date":"2014-2015",
-            "works":"zB: Malerarbeiten, Putzarbeiten, Spachtelung"
+            "works":"Item 2 description for works",
+            "gallery": [
+                {
+                    "id": 1,
+                    "alt": "Test 1",
+                    "small": "assets/i/works/1.jpg",
+                    "large": "assets/i/works/1.jpg"
+                },
+                {
+                    "id": 2,
+                    "alt": "Test 2",
+                    "small": "assets/i/works/2.jpg",
+                    "large": "assets/i/works/2.jpg"
+                }
+            ]
         }
     }
 ]

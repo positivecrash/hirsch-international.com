@@ -72,7 +72,7 @@ body {
   text-decoration: none !important;
 }
 
-.header.header-home .header-home__video video, .home-quality__begin, .home-quality__begin::after, .home-works .splide__slide .splide__slide__desc div:first-child > *, .home-works .splide__slide .splide__slide__desc div:last-child > *, .works__info, .works__info .close, .map__text, .map__map__map, .map__map__logo {
+.header.header-home .header-home__video video, .home-quality__begin, .home-quality__begin::after, .home-works .splide__slide .splide__slide__desc div:first-child > *, .home-works .splide__slide .splide__slide__desc div:last-child > *, .works__info.popup, .works__info .close, .map__text, .map__map__map, .map__map__logo {
   visibility: hidden;
   opacity: 0;
 }
@@ -1194,7 +1194,7 @@ section {
   grid-template-columns: repeat(3, 1fr);
   gap: 50px;
 }
-.works__info {
+.works__info.popup {
   background: var(--color-body);
   position: fixed;
   top: 0;
@@ -1206,7 +1206,7 @@ section {
   overflow: hidden;
   pointer-events: none;
 }
-.works__info.active {
+.works__info.popup.active {
   animation: FadeIn 0.2s var(--animation-bump) var(--animation-appeardelay) forwards;
   pointer-events: visible;
 }
