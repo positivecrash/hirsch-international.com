@@ -27,7 +27,7 @@
     </header>
     <main class="home" role="main">
       <section>
-        <h1 class="text-center">Referenzen</h1>
+        <h1 class="text-center"><a href="#">Referenzen</a></h1>
         <div class="works__info">
           <div class="data">
             <div id="ajax_container">
@@ -38,12 +38,11 @@
                 </div>
               </div>
               <div class="data__info">
-                <ul>
-                  <li>
-                    <h4>militärkrankenhaus indonesien</h4><i>indonesien</i>
-                  </li>
-                  <li><b>Auftraggeber:</b><span>Stadt, Land</span></li>
-                </ul>
+                <div>
+                  <h3>militärkrankenhaus indonesien</h3><i>indonesien</i>
+                </div>
+                <div><strong>Auftraggeber:</strong><span>Stadt, Land</span></div>
+                <div><strong>Ausführungszeit:</strong><span>2017 </span></div>
               </div>
             </div>
           </div>
@@ -52,7 +51,11 @@
         <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
         <script>
           $(document).ready(function(){
-              $('.slider').bxSlider();
+              $('.slider').bxSlider({
+                      adaptiveHeight: true,
+                      nextText: '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19.4px" height="40.8px" viewBox="0 0 19.4 40.8" style="enable-background:new 0 0 19.4 40.8;" xml:space="preserve"><path id="Path_5441" class="st0" d="M2.1,2.1l15.4,18.3L2.1,38.7"/></svg>',
+                      prevText: '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19.4px" height="40.8px" viewBox="0 0 19.4 40.8" style="enable-background:new 0 0 19.4 40.8;" xml:space="preserve"><path id="Path_5437" class="st0" d="M17.3,38.7L2,20.4L17.3,2.1"/></svg>'
+                  });
           });
         </script>
       </section>

@@ -125,3 +125,61 @@
         animation: ScaleY $BO_duration var(--animation-border)  calc( var(--animation-scrolldelay) + #{$BO_duration} ) forwards;
     }
 }
+
+.section-i-left {
+    .img, .content {
+        float: left;
+    }
+
+    .content {
+        padding-left: 4%;
+    }
+}
+
+.section-i-right {
+    .img, .content {
+        float: right;
+    }
+
+    .content {
+        padding-right: 4%;
+    }
+}
+
+
+.section-i-left, .section-i-right {
+
+    overflow: hidden;
+
+    .img {
+        width: 60%;   
+    }
+
+    .content {
+        padding-top: 70px;
+        width: 24%;
+        box-sizing: border-box;
+    }
+
+    @media screen and (max-width: 1400px) {
+        .content {
+            padding-top: 0;
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        .content {
+            width: 40%;
+            padding: var(--space-side);
+        }
+    }
+
+    @media screen and (max-width: 760px) {
+
+        .img, .content {
+            float: none;
+            width: 100%;
+        }
+
+    }
+}

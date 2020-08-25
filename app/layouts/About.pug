@@ -1,0 +1,33 @@
+extends extends/layout.pug
+include mixins/sections.pug
+
+block html
+    - var meta_title = 'Über uns'
+    - var page_layout = 'default'
+    - var bodyclass = ''
+
+block content
+    section.container-content-narrow.text-center
+        h1 Über uns
+        h2 Komplettanbieter für Innenausbau
+
+    section.section-i-left
+        img.img(src="assets/i/tmp/about-1.png", alt="")
+        div.content
+            h4 Ihr Projekt in besten Händen
+            p Hirsch International ist weltweiter Auftragnehmer für Innenausbau und bietet Komplettlösungen mit Projektmanagement aus einer Hand: Maler, Tapezierer, Bodenleger, Trockenbau, Fliesenleger, Metallbau u. a.
+
+    section.container-content-narrow.text-center
+        h2 EINE STOLZE FAMILIE
+        p Wachstum braucht starke Wurzeln: Als Herzstück des Unternehmens ist die Hirsch Beteiligungs GmbH die Basis, von der alles abstammt. Für Komplettlösungen im Innenausbau steht die Hirsch International GmbH, die in mehreren Ländern vertreten ist. Die Hirsch Social engagiert sich für die Ärmsten der Armen und betreibt Entwicklungshilfe mit Sinn.  Alle erfolgreichen Tochterunternehmen tragen den Kern des Unternehmens weiter, wachsen und beschreiten neue Wege.
+        
+    section.section-i-right
+         img.img(src="assets/i/tmp/about-2.png", alt="")
+         
+         div.content
+            h4 Komplettlösungen aus einer Hand
+            p HUnser Vorteil: Wir verbinden die Schnittstellen zwischen den Gewerken und kümmern uns auch um die Details, damit die Qualität Ihres Projektes stimmt und die terminliche Koordination passt. Sie haben weniger Arbeit, weniger Sorgen, keine Extrakosten und nur einen Ansprechpartner.
+            h4 Qualität durch Kompetenz und Erfahrung
+            p Sie erhalten termingerechte Fertigstellung in europäischer Handwerksqualität, einen geordneten Baustellenablauf und profitieren von der sicheren Partnerschaft mit einem Familienunternehmen, dessen Geschichte bereits 1892 beginnt. 
+            
+    +section_map()

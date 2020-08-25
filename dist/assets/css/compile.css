@@ -136,6 +136,15 @@ h3 {
   font-size: calc(var(--font-size-text) + 7px);
 }
 
+h4 {
+  text-align: left;
+  font-family: var(--font-family-text);
+  font-size: calc(var(--font-size-text) + 2px);
+  font-weight: 700;
+  color: var(--color-orange);
+  margin-bottom: var(--space-side);
+}
+
 ul, ol, li, p, blockquote {
   margin-bottom: 40px;
 }
@@ -1484,4 +1493,47 @@ section {
 }
 .animated .animated-border::after {
   animation: ScaleY 0.4s var(--animation-border) calc( var(--animation-scrolldelay) + 0.4s ) forwards;
+}
+
+.section-i-left .img, .section-i-left .content {
+  float: left;
+}
+.section-i-left .content {
+  padding-left: 4%;
+}
+
+.section-i-right .img, .section-i-right .content {
+  float: right;
+}
+.section-i-right .content {
+  padding-right: 4%;
+}
+
+.section-i-left, .section-i-right {
+  overflow: hidden;
+}
+.section-i-left .img, .section-i-right .img {
+  width: 60%;
+}
+.section-i-left .content, .section-i-right .content {
+  padding-top: 70px;
+  width: 24%;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 1400px) {
+  .section-i-left .content, .section-i-right .content {
+    padding-top: 0;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .section-i-left .content, .section-i-right .content {
+    width: 40%;
+    padding: var(--space-side);
+  }
+}
+@media screen and (max-width: 760px) {
+  .section-i-left .img, .section-i-left .content, .section-i-right .img, .section-i-right .content {
+    float: none;
+    width: 100%;
+  }
 }

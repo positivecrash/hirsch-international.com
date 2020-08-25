@@ -52,6 +52,15 @@ h3 {
 	font-size: calc(var(--font-size-text) + 7px);
 }
 
+h4 {
+	text-align: left;
+	font-family: var(--font-family-text);
+	font-size: calc(var(--font-size-text) + 2px);
+	font-weight: 700;
+	color: var(--color-orange);
+	margin-bottom: var(--space-side);
+}
+
 ul, ol, li, p, blockquote {
 	margin-bottom: 40px;
 
