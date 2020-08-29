@@ -1,4 +1,10 @@
 window.addEventListener('load', function(){
+    // animateScroll('.animatedAppear');
+
+    document.querySelectorAll('.animatedAppear').forEach(item => {
+        animate(item);
+        // console.log(item);
+    });
 
 }, false);
 function inView(el) {
@@ -28,5 +34,21 @@ var animateScroll = function(selector) {
 
   window.addEventListener('scroll', function(){ 
     inViewAnimate(selector);
+  }, false);
+};
+
+
+
+var animate = function(el) {
+  var c = "animated";
+
+  if (inView(el)) {
+    el.classList.add(c);
+  }
+  
+  window.addEventListener('scroll', function(){ 
+    if (inView(el)) {
+      el.classList.add(c);
+    }
   }, false);
 };

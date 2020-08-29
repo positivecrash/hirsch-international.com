@@ -50,10 +50,11 @@ body {
   --font-size-text: 14px;
   --color-text: #000000;
   --color-body: #ffffff;
-  --color-gray: #707070;
+  --color-gray: #131212;
   --color-gray-light: #EBEBEB;
   --color-orange: #F06400;
   --color-darkblue: #2F3545;
+  --color-green: #A2C617;
   --space-side: 20px;
   --space-section: 100px;
   --animation-bump: cubic-bezier(0.6, 0.04, 0.98, 0.335);
@@ -61,28 +62,25 @@ body {
   --animation-scrolldelay: 1.5s;
   --animation-appeardelay: 0.1s;
   --animation-appearduration: 0.8s;
+  --animation-duration-border: 0.4s;
 }
 
-/*====== Fonts ======*/
-/*====== Margins, paddings ======*/
-/*====== Bootstrap ======*/
-/*====== Media queries ======*/
-h1 a, .btn-bordered, .btn-orange, .header__menu__links a, .footer a, .services__listcontent a, .recommendations a.recommendations__item, .works__info .close, h1 a:hover, .btn-bordered:hover, .btn-orange:hover, .header__menu__links a:hover, .footer a:hover, .services__listcontent a:hover, .recommendations a.recommendations__item:hover, .works__info .close:hover, h1 a:focus, .btn-bordered:focus, .btn-orange:focus, .header__menu__links a:focus, .footer a:focus, .services__listcontent a:focus, .recommendations a.recommendations__item:focus, .works__info .close:focus, h1 a:visited, .btn-bordered:visited, .btn-orange:visited, .header__menu__links a:visited, .footer a:visited, .services__listcontent a:visited, .recommendations a.recommendations__item:visited, .works__info .close:visited {
+h1 a, .btn-bordered, .btn-orange, .header__menu__links a, .footer a, .services__listcontent a, .recommendations a.recommendations__item, .works__info .close, .phrasewindow, .hirschtree .item, h1 a:hover, .btn-bordered:hover, .btn-orange:hover, .header__menu__links a:hover, .footer a:hover, .services__listcontent a:hover, .recommendations a.recommendations__item:hover, .works__info .close:hover, .phrasewindow:hover, .hirschtree .item:hover, h1 a:focus, .btn-bordered:focus, .btn-orange:focus, .header__menu__links a:focus, .footer a:focus, .services__listcontent a:focus, .recommendations a.recommendations__item:focus, .works__info .close:focus, .phrasewindow:focus, .hirschtree .item:focus, h1 a:visited, .btn-bordered:visited, .btn-orange:visited, .header__menu__links a:visited, .footer a:visited, .services__listcontent a:visited, .recommendations a.recommendations__item:visited, .works__info .close:visited, .phrasewindow:visited, .hirschtree .item:visited {
   text-decoration: none;
   text-decoration: none !important;
 }
 
-.header.header-home .header-home__video video, .home-quality__begin, .home-quality__begin::after, .home-works .splide__slide .splide__slide__desc div:first-child > *, .home-works .splide__slide .splide__slide__desc div:last-child > *, .works__info.popup, .works__info .close, .map__text, .map__map__map, .map__map__logo {
+.header.header-home .header-home__video video, .home-quality__begin, .home-quality__begin::after, .home-works .splide__slide .splide__slide__desc div:first-child > *, .home-works .splide__slide .splide__slide__desc div:last-child > *, .works__info.popup, .works__info .close, .map__text, .map__map__map, .map__map__logo, .section-i-left.animatedAppear .img, .section-i-right.animatedAppear .img {
   visibility: hidden;
   opacity: 0;
 }
 
-.home-specialization, .home-quality, .home-services, .home-services .services, .home-recommendations, .home-bonus, .home-works, .map {
+.home-specialization, .home-quality, .home-services, .home-services .services, .home-recommendations, .home-bonus, .home-works, .map, .section-i-left.animatedAppear .content, .section-i-right.animatedAppear .content {
   visibility: hidden;
   opacity: 0;
   transform: translateY(10%);
 }
-.animated.home-specialization, .animated.home-quality, .animated.home-services, .home-services .animated.services, .animated.home-recommendations, .animated.home-bonus, .animated.home-works, .animated.map {
+.animated.home-specialization, .animated.home-quality, .animated.home-services, .home-services .animated.services, .animated.home-recommendations, .animated.home-bonus, .animated.home-works, .animated.map, .section-i-left.animatedAppear .animated.content, .section-i-right.animatedAppear .animated.content {
   animation-name: FadeIn, FloatYUp;
   animation-duration: var(--animation-appearduration);
   animation-timing-function: linear;
@@ -106,12 +104,13 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   letter-spacing: 1px;
   text-align: center;
-  margin: 40px 0;
+  margin: calc( var(--space-side) * 2 ) 0;
 }
-h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
+
+h2:first-child, h3:first-child, h4:first-child, h5:first-child {
   margin-top: 0;
 }
-h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child {
+h2:last-child, h3:last-child, h4:last-child, h5:last-child {
   margin-bottom: 0;
 }
 
@@ -154,6 +153,10 @@ ul:last-child, ol:last-child, li:last-child, p:last-child, blockquote:last-child
 
 a {
   transition: all 0.2s ease;
+}
+
+p {
+  line-height: 1.8;
 }
 
 .text-center {
@@ -229,6 +232,22 @@ a {
   }
   100% {
     transform: translateY(0);
+  }
+}
+@keyframes FloatXRight {
+  0% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes FloatXLeft {
+  0% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 .btn-bordered, .btn-orange {
@@ -665,7 +684,6 @@ html.default main section:first-child {
 }
 
 section {
-  margin-top: var(--space-section);
   margin-bottom: var(--space-section);
 }
 
@@ -1394,6 +1412,74 @@ section {
   }
 }
 
+.phrasewindow {
+  display: block;
+  width: 280px;
+  height: 280px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  color: var(--color-orange);
+  font-family: var(--font-family-headings);
+  font-size: calc( var(--font-size-text) + 12px );
+  text-transform: uppercase;
+  padding: calc( var(--space-side) + 20px ) calc( var(--space-side) + 10px );
+  font-weight: 600;
+}
+.phrasewindow span {
+  visibility: hidden;
+  opacity: 0;
+}
+.phrasewindow.animated span {
+  animation: FadeIn var(--animation-duration-border) var(--animation-bump) var(--animation-scrolldelay) forwards;
+}
+
+.hirschtree {
+  text-align: center;
+  white-space: nowrap;
+  overflow: scroll;
+}
+.hirschtree .item {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 160px;
+  padding: 10px;
+  color: var(--color-text);
+  background-color: var(--color-body);
+}
+.hirschtree .item img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto 10px;
+}
+.hirschtree .item__name, .hirschtree .item__share {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.hirschtree .item__name {
+  display: block;
+  width: 100%;
+}
+.hirschtree .item__share {
+  font-size: calc( var(--font-size-text) + 2px);
+  display: block;
+  overflow: hidden;
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-body);
+}
+.hirschtree .item__share b {
+  float: left;
+  box-sizing: border-box;
+  padding: 2px 10px;
+  background-color: var(--color-darkblue);
+}
+.hirschtree .item__share b:first-child {
+  background-color: var(--color-green);
+}
+.hirschtree .item__share b.s-100 {
+  width: 100%;
+}
+
 .map {
   position: relative;
   padding-bottom: 70px;
@@ -1488,11 +1574,11 @@ section {
   transform-origin: 0 0;
 }
 
-.animated .animated-border::before {
-  animation: ScaleX 0.4s var(--animation-border) var(--animation-scrolldelay) forwards;
+.animated .animated-border::before, .animated.animated-border::before {
+  animation: ScaleX var(--animation-duration-border) var(--animation-border) var(--animation-scrolldelay) forwards;
 }
-.animated .animated-border::after {
-  animation: ScaleY 0.4s var(--animation-border) calc( var(--animation-scrolldelay) + 0.4s ) forwards;
+.animated .animated-border::after, .animated.animated-border::after {
+  animation: ScaleY var(--animation-duration-border) var(--animation-border) calc( var(--animation-scrolldelay) + var(--animation-duration-border) ) forwards;
 }
 
 .section-i-left .img, .section-i-left .content {
@@ -1501,12 +1587,26 @@ section {
 .section-i-left .content {
   padding-left: 4%;
 }
+.section-i-left.animatedAppear .img {
+  transform-origin: 0 0;
+  transform: translateX(-10%);
+}
+.section-i-left.animated img {
+  animation-name: FadeIn, FloatXRight;
+}
 
 .section-i-right .img, .section-i-right .content {
   float: right;
 }
 .section-i-right .content {
   padding-right: 4%;
+}
+.section-i-right.animatedAppear .img {
+  transform-origin: 100% 0;
+  transform: translateX(10%);
+}
+.section-i-right.animated img {
+  animation-name: FadeIn, FloatXLeft;
 }
 
 .section-i-left, .section-i-right {
@@ -1519,6 +1619,19 @@ section {
   padding-top: 70px;
   width: 24%;
   box-sizing: border-box;
+}
+.section-i-left.animated img, .section-i-right.animated img {
+  animation-duration: var(--animation-appearduration);
+  animation-timing-function: linear;
+  animation-delay: var(--animation-appeardelay);
+  animation-fill-mode: forwards;
+}
+.section-i-left.animated .content, .section-i-right.animated .content {
+  animation-name: FadeIn, FloatYUp;
+  animation-duration: var(--animation-appearduration);
+  animation-timing-function: linear;
+  animation-delay: var(--animation-appeardelay);
+  animation-fill-mode: forwards;
 }
 @media screen and (max-width: 1400px) {
   .section-i-left .content, .section-i-right .content {

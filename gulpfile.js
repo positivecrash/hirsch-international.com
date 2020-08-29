@@ -107,6 +107,10 @@ gulp.task('cropimg', function () {
     .pipe(jimp({ [path.filename.imgcrop]: path.settings.imgcrop })).pipe(gulp.dest(path.folder.image));
 
     gulp
+    .src(path.folder.image + 'Hirsch-Logo-Head.png')
+    .pipe(jimp({ [path.filename.imgcrop]: path.settings.imgcrop })).pipe(gulp.dest(path.folder.image));
+
+    gulp
     .src(path.folder.image + 'map.png')
     .pipe(jimp({ [path.filename.imgcrop]: path.settings.imgcrop })).pipe(gulp.dest(path.folder.image));
 

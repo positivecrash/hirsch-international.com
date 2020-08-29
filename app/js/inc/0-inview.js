@@ -27,3 +27,19 @@ var animateScroll = function(selector) {
     inViewAnimate(selector);
   }, false);
 };
+
+
+
+var animate = function(el) {
+  var c = "animated";
+
+  if (inView(el)) {
+    el.classList.add(c);
+  }
+  
+  window.addEventListener('scroll', function(){ 
+    if (inView(el)) {
+      el.classList.add(c);
+    }
+  }, false);
+};

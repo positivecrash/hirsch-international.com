@@ -114,15 +114,14 @@
     }
 }
 
-.animated .animated-border {
-    $BO_duration: 0.4s;
+.animated .animated-border, .animated.animated-border {
 
     &::before {
-        animation: ScaleX $BO_duration var(--animation-border)  var(--animation-scrolldelay) forwards;
+        animation: ScaleX var(--animation-duration-border) var(--animation-border)  var(--animation-scrolldelay) forwards;
     }
 
     &::after {
-        animation: ScaleY $BO_duration var(--animation-border)  calc( var(--animation-scrolldelay) + #{$BO_duration} ) forwards;
+        animation: ScaleY var(--animation-duration-border) var(--animation-border)  calc( var(--animation-scrolldelay) + var(--animation-duration-border) ) forwards;
     }
 }
 
@@ -134,6 +133,17 @@
     .content {
         padding-left: 4%;
     }
+
+    &.animatedAppear {
+        .img {
+            transform-origin: 0 0;
+            transform: translateX(-10%);
+        }
+    }
+
+    &.animated img {
+        animation-name: FadeIn, FloatXRight;
+    }
 }
 
 .section-i-right {
@@ -144,6 +154,17 @@
     .content {
         padding-right: 4%;
     }
+
+    &.animatedAppear {
+        .img {
+            transform-origin: 100% 0;
+            transform: translateX(10%);
+        }
+    }
+
+    &.animated img {
+        animation-name: FadeIn, FloatXLeft;
+    }
 }
 
 
@@ -152,13 +173,41 @@
     overflow: hidden;
 
     .img {
-        width: 60%;   
+        width: 60%;
     }
 
     .content {
         padding-top: 70px;
         width: 24%;
         box-sizing: border-box;
+    }
+
+    &.animatedAppear {
+        .img {
+            @extend %hidden;
+        }
+
+        .content {
+            @extend %showUp;
+        }
+    }
+
+    &.animated
+    {
+        img {
+            animation-duration: var(--animation-appearduration);
+            animation-timing-function: linear;
+            animation-delay: var(--animation-appeardelay);
+            animation-fill-mode: forwards;
+        }
+
+        .content {
+            animation-name: FadeIn, FloatYUp;
+			animation-duration: var(--animation-appearduration);
+			animation-timing-function: linear;
+			animation-delay: var(--animation-appeardelay);
+			animation-fill-mode: forwards;
+        }
     }
 
     @media screen and (max-width: 1400px) {

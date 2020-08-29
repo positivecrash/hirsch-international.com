@@ -89,3 +89,21 @@
 		transform: translateY(0);
 	}
 }
+
+@keyframes FloatXRight {
+	0% {
+		transform: translateX(-10%);
+	}
+	100%{
+		transform: translateX(0);
+	}
+}
+
+@keyframes FloatXLeft {
+	0% {
+		transform: translateX(10%);
+	}
+	100%{
+		transform: translateX(0);
+	}
+}
