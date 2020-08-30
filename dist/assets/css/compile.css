@@ -478,6 +478,7 @@ ul.bxslider {
   overflow: hidden;
   min-height: 100%;
   box-sizing: border-box;
+  margin-bottom: var(--space-section);
   display: grid;
   grid-template-rows: auto 1fr;
 }
@@ -1567,6 +1568,33 @@ section {
 }
 .hirschtree .level-3 .item__share b {
   background-color: var(--color-darkblue);
+}
+
+.team__heading {
+  margin-bottom: 80px;
+}
+.team__heading, .team__heading h4 {
+  text-align: center;
+}
+.team__heading h3 {
+  color: var(--color-text);
+  font-weight: 700;
+}
+.team__heading h4 {
+  text-transform: none;
+  letter-spacing: 0;
+}
+.team__heading h3, .team__heading h4 {
+  margin: 0;
+}
+.team__heading img {
+  display: inline-block;
+  margin-bottom: var(--space-side);
+}
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 80px;
 }
 
 .map {

@@ -144,6 +144,7 @@
 		overflow: hidden;
 		min-height: 100%;
 		box-sizing: border-box;
+		margin-bottom: var(--space-section);
 
 		display: grid;
 		grid-template-rows: auto 1fr;
