@@ -22,23 +22,19 @@
     }
 }
 
-
-
 .hirschtree-wrap {
-    position: relative;
-    max-width: 100%;
-    overflow: scroll;
     text-align: center;
+    overflow: hidden;
 }
 
 .hirschtree {
     display: inline-block;
-    // text-align: center;
-    white-space: nowrap;
-    // width: 1050px;
-    // margin: 0 auto;
+    text-align: center;
+    position: relative;
+    left: -120px;
+    // white-space: nowrap;
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1080px) {
         transform: scale(0.9);
     }
 
@@ -153,13 +149,12 @@
     }
 
     .level-1 {
-        // grid-template-columns: repeat(3, 1fr);
         width: 630px;
     }
 
-    .level-2 {
+    .level-2, .level-3 {
         width: 750px;
-        margin-left: 166px;
+        left: 166px;
 
         .item {
             width: 150px;
@@ -168,6 +163,15 @@
         &:before {
             left: 75px;
             right: 75px;
+        }
+    }
+
+    .level-3 {
+        width: 418px;
+        left: 632px;
+
+        .item__share b {
+            background-color: var(--color-darkblue);
         }
     }
 

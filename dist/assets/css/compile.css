@@ -1434,17 +1434,17 @@ section {
 }
 
 .hirschtree-wrap {
-  position: relative;
-  max-width: 100%;
-  overflow: scroll;
   text-align: center;
+  overflow: hidden;
 }
 
 .hirschtree {
   display: inline-block;
-  white-space: nowrap;
+  text-align: center;
+  position: relative;
+  left: -120px;
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1080px) {
   .hirschtree {
     transform: scale(0.9);
   }
@@ -1550,16 +1550,23 @@ section {
 .hirschtree .level-1 {
   width: 630px;
 }
-.hirschtree .level-2 {
+.hirschtree .level-2, .hirschtree .level-3 {
   width: 750px;
-  margin-left: 166px;
+  left: 166px;
 }
-.hirschtree .level-2 .item {
+.hirschtree .level-2 .item, .hirschtree .level-3 .item {
   width: 150px;
 }
-.hirschtree .level-2:before {
+.hirschtree .level-2:before, .hirschtree .level-3:before {
   left: 75px;
   right: 75px;
+}
+.hirschtree .level-3 {
+  width: 418px;
+  left: 632px;
+}
+.hirschtree .level-3 .item__share b {
+  background-color: var(--color-darkblue);
 }
 
 .map {
