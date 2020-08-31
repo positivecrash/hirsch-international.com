@@ -232,3 +232,25 @@
 
     }
 }
+
+
+.kontakts{
+
+    .data__info {
+        padding-top: 30px;
+
+        .st0{fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+
+        p {
+            display: grid;
+            grid-template-columns: 36px 1fr;
+            gap: 27px;
+            align-items: center;
+        }
+    }
+
+    .btn-bordered {
+        margin-top: 50px;
+    }
+    
+}

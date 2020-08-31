@@ -1822,3 +1822,23 @@ section {
     width: 100%;
   }
 }
+
+.kontakts .data__info {
+  padding-top: 30px;
+}
+.kontakts .data__info .st0 {
+  fill: none;
+  stroke: #000000;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.kontakts .data__info p {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 27px;
+  align-items: center;
+}
+.kontakts .btn-bordered {
+  margin-top: 50px;
+}
