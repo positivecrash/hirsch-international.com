@@ -1842,3 +1842,34 @@ section {
 .kontakts .btn-bordered {
   margin-top: 50px;
 }
+
+#page404 > div {
+  background-color: #FBE7A3;
+  background-image: url("../i/404.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 580px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#page404 > div > div {
+  margin-top: -70px;
+}
+#page404 h1 {
+  color: var(--color-darkblue);
+  font-size: 100px;
+  font-family: var(--font-family-headings);
+  margin: 0;
+}
+#page404 h3 {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 700;
+}
+#page404 .btn-orange {
+  margin-top: 66px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
