@@ -1854,6 +1854,11 @@ section {
   justify-content: center;
   text-align: center;
 }
+@media screen and (max-width: 640px) {
+  #page404 > div {
+    background-size: cover;
+  }
+}
 #page404 > div > div {
   margin-top: -70px;
 }
