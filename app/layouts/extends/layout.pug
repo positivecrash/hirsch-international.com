@@ -28,6 +28,13 @@ html(lang='en', class=page_layout)
 		
 		if page_layout == 'default'
 			include ../includes/header-default.pug
-			main.home(role="main")
+			main(role="main")
+				block content
+			include ../includes/footer-default.pug
+
+
+		if page_layout == 'history'
+			include ../includes/header-default.pug
+			main.history(role="main")
 				block content
 			include ../includes/footer-default.pug

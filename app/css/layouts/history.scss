@@ -1,0 +1,23 @@
+.history {
+    background-color: var(--color-darkblue);
+    
+    &, h2 { color: var(--color-body); }
+    .bx-caption {
+        color: #FAB900;
+        padding-top: 10px;
+    }
+
+    .bx-pager {
+        bottom: 40px;
+    }
+
+    // .section-i-left, .section-i-right {
+    //     .img {
+    //         width: 55%;
+    //     }
+
+    //     .content {
+    //         width: 41%;
+    //     }
+    // }
+}

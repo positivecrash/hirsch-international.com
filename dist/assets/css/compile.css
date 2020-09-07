@@ -75,17 +75,22 @@ h1 a, .btn-bordered, .btn-orange, .header__menu__links a, .footer a, .services__
   opacity: 0;
 }
 
-.home-specialization, .home-quality, .home-services, .home-services .services, .home-recommendations, .home-bonus, .home-works, .map, .section-i-left.animatedAppear .content, .section-i-right.animatedAppear .content {
+.animatedAppearUp, .home-specialization, .home-quality, .home-services, .home-services .services, .home-recommendations, .home-bonus, .home-works, .map, .section-i-left.animatedAppear .content, .section-i-right.animatedAppear .content {
   visibility: hidden;
   opacity: 0;
   transform: translateY(10%);
 }
-.animated.home-specialization, .animated.home-quality, .animated.home-services, .home-services .animated.services, .animated.home-recommendations, .animated.home-bonus, .animated.home-works, .animated.map, .section-i-left.animatedAppear .animated.content, .section-i-right.animatedAppear .animated.content {
+.animated.animatedAppearUp, .animated.home-specialization, .animated.home-quality, .animated.home-services, .home-services .animated.services, .animated.home-recommendations, .animated.home-bonus, .animated.home-works, .animated.map, .section-i-left.animatedAppear .animated.content, .section-i-right.animatedAppear .animated.content {
   animation-name: FadeIn, FloatYUp;
   animation-duration: var(--animation-appearduration);
   animation-timing-function: linear;
   animation-delay: var(--animation-appeardelay);
   animation-fill-mode: forwards;
+}
+
+html:not([class*='home']) body > *, .section-i-left > *, .section-i-right > * {
+  min-width: 0;
+  max-width: 100%;
 }
 
 html {
@@ -95,7 +100,7 @@ html {
 body {
   font-family: var(--font-family-text);
   font-size: var(--font-size-text);
-  line-height: 1.5;
+  line-height: 1.7;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -316,6 +321,7 @@ p {
 .bx-wrapper img {
   max-width: 100%;
   display: block;
+  margin: 0 auto;
 }
 
 .bxslider {
@@ -1383,6 +1389,16 @@ section {
   width: 100%;
   height: auto;
 }
+@media screen and (max-width: 700px) {
+  .works__info .data .data__photos, .works__info .data .data__info {
+    float: none;
+    width: 100%;
+  }
+  .works__info .data .data__info {
+    margin-left: 0;
+    width: 100%;
+  }
+}
 .works__item {
   transition: all 0.2s ease;
   text-align: center;
@@ -1652,6 +1668,20 @@ section {
   color: #E00F00;
 }
 
+.history {
+  background-color: var(--color-darkblue);
+}
+.history, .history h2 {
+  color: var(--color-body);
+}
+.history .bx-caption {
+  color: #FAB900;
+  padding-top: 10px;
+}
+.history .bx-pager {
+  bottom: 40px;
+}
+
 .map {
   position: relative;
   padding-bottom: 70px;
@@ -1753,46 +1783,46 @@ section {
   animation: ScaleY var(--animation-duration-border) var(--animation-border) calc( var(--animation-scrolldelay) + var(--animation-duration-border) ) forwards;
 }
 
-.section-i-left .img, .section-i-left .content {
-  float: left;
-}
-.section-i-left .content {
-  padding-left: 4%;
+.section-i-left {
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  justify-items: start;
 }
 .section-i-left.animatedAppear .img {
   transform-origin: 0 0;
   transform: translateX(-10%);
 }
-.section-i-left.animated img {
+.section-i-left.animated .img {
   animation-name: FadeIn, FloatXRight;
 }
 
-.section-i-right .img, .section-i-right .content {
-  float: right;
-}
-.section-i-right .content {
-  padding-right: 4%;
+.section-i-right {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+  justify-items: end;
 }
 .section-i-right.animatedAppear .img {
   transform-origin: 100% 0;
   transform: translateX(10%);
 }
-.section-i-right.animated img {
+.section-i-right.animated .img {
   animation-name: FadeIn, FloatXLeft;
 }
 
 .section-i-left, .section-i-right {
-  overflow: hidden;
+  display: grid;
+  gap: 4%;
+  align-items: center;
 }
-.section-i-left .img, .section-i-right .img {
-  width: 60%;
+.section-i-left img, .section-i-right img {
+  max-width: 100%;
 }
-.section-i-left .content, .section-i-right .content {
-  padding-top: 70px;
-  width: 24%;
-  box-sizing: border-box;
+.section-i-left h2, .section-i-left h3, .section-i-right h2, .section-i-right h3 {
+  text-align: left;
+  color: var(--color-orange);
 }
-.section-i-left.animated img, .section-i-right.animated img {
+.section-i-left .content.narrow, .section-i-right .content.narrow {
+  max-width: 360px;
+}
+.section-i-left.animated .img, .section-i-right.animated .img {
   animation-duration: var(--animation-appearduration);
   animation-timing-function: linear;
   animation-delay: var(--animation-appeardelay);
@@ -1804,23 +1834,6 @@ section {
   animation-timing-function: linear;
   animation-delay: var(--animation-appeardelay);
   animation-fill-mode: forwards;
-}
-@media screen and (max-width: 1400px) {
-  .section-i-left .content, .section-i-right .content {
-    padding-top: 0;
-  }
-}
-@media screen and (max-width: 1024px) {
-  .section-i-left .content, .section-i-right .content {
-    width: 40%;
-    padding: var(--space-side);
-  }
-}
-@media screen and (max-width: 760px) {
-  .section-i-left .img, .section-i-left .content, .section-i-right .img, .section-i-right .content {
-    float: none;
-    width: 100%;
-  }
 }
 
 .kontakts .data__info {

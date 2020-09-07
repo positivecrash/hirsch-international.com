@@ -1,0 +1,62 @@
+extends extends/layout.pug
+include mixins/sections.pug
+
+block html
+    - var meta_title = 'Geschichte'
+    - var page_layout = 'history'
+    - var bodyclass = ''
+
+block content
+    section.container-content-narrow.text-center.animatedAppearUp
+        h1 Geschichte
+        h2 
+            | SEIT 1892 IN VIER GENERATIONEN
+            br/
+            | VON LINZ IN DIE WEITE WELT
+
+    section.container-content.section-i-left.animatedAppear
+        .img
+            .slider
+                div: img(src="assets/i/tmp/history-1.jpg", alt="", title="Ernst Hirsch – Firmengründer 1892")
+                div: img(src="assets/i/tmp/history-1.jpg", alt="")
+                div: img(src="assets/i/tmp/history-1.jpg", alt="")
+        div.content 1892 gegründet, heute 250 – 300 Mitarbeiter/innen und Aufträge von Österreich über Polen, Tschechien bis Gabun, Aserbaidschan und Tadschikistan: Hirsch Beteiligungs GmbH ist mit seiner Unternehmensstruktur ein Familienunternehmen mit einer etwas anderen Auffassung. Dank der Weitsicht der drei Vorgänger: Ernst, Otto und Otto Hirsch konnte das Unternehmen Schritt für Schritt weiter entwickelt werden. Kulturelles Gespür, soziales Engagement und wirtschaftliche Nachhaltigkeit sind hier der Treibstoff.
+
+    
+    section.container-content.section-i-right.animatedAppear
+        div.content Was haben der Flughafen von Duschanbe / Tadschikistan, ein Krankenhaus in Libreville / Gabun, die deutsche Botschaft in Stockholm / Schweden, das Hotel und Residenzgebäude Andermatt / Schweiz oder der Präsidentenpalast in Baku / Aserbaidschan, gemeinsam? Innenausbau und Beschichtungsarbeiten – bei letzterem auch Stuckund Dekorationsarbeiten – stammen von einem österreichischen Unternehmen. „Hirsch“ ist wahrscheinlich der einzige heimische Betrieb seiner Art, der in Ländern tätig ist, die man so garnicht mit einem Innenausbauunternehmen aus Linz in Verbindung bringen würde. Büros und Hotels, Industrie- und Wohnbauten, Krankenhäuser und Garagen hat das Unternehmen in Zentral- und Osteuropa im Auftrag, was nicht zuletzt an der Strategie des heutigen Unternehmers Otto Hirsch, der das vor über 128 Jahren gegründete Unternehmen heute in vierter Generation führt, liegt. Eigentlich wollte der umtriebige Vater von vier Kindern Architekt werden, nach einer plötzlichen Erkrankung seines Vaters stieg er unerwartet, als 20-jähriger 1980 in den Familienbetrieb ein, dem er seit 1990 als geschäftsführender Gesellschafter vorsteht. „Ich habe in Linz an der HTL Hochbau studiert, das Rüstzeug und die pädagogischen Fähigkeiten für die Führung des Unternehmens aber vor allem bei den Pfadfindern gelernt“, erinnert sich Hirsch, der genauso gern über seine zahlreichen Sozialprojekte – hauptsächlich in Nairobi / Kenia – erzählen würde, für die sein Herz schlägt. Und die Leidenschaft für dieses soziale Engagement rühre ebenfalls von seiner Zeit bei den Pfadfindern, denen er bis heute emotional verbunden ist.
+        
+        .img
+            .slider
+                div: img(src="assets/i/tmp/history-2.jpg", alt="", title="Otto Hirsch I. mit seiner Familie")
+
+
+    section.container-content.section-i-left.animatedAppear
+        .img
+            .slider
+                div: img(src="assets/i/tmp/history-3.jpg", alt="", title="Otto Hirsch II. mit seiner Frau")
+        div.content
+            h2 FAMILIÄRES BETEILIGUNGSMODELL
+            p Die expansive Entwicklung des oberösterreichischen Mittelständlers begann jedenfalls in den 1990er Jahren. „Das erste große internationale Projekt war die Sanierung der österreichischen Botschaft in Ankara. “Vor kurzem renovierten wir übrigens die deutsche Residenz in Istanbul“, erzählt Hirsch, der Mitte der 90er Tochterunternehmen in der Tschechischen Republik und Polen gründete und mit dem Trockenbauangebot für Hotels und Einkaufszentren groß wurde. Hirsch betont, dass er damals nicht die Malerei und den Innenausbau exportieren wollte, sondern die Idee des Familienbetriebes: Ein regional verankertes und am Unternehmen beteiligtes Management ist Voraussetzung für jedes Tochterunternehmen in der Gruppe. Sein Motto damals, wie heute: „Nachhaltigkeit vor Gewinnmaximierung“.
+            p Unvergessen bleibt für ihn die Episode der ersten Firmengründung in Polen: Ausgestattet mit einem absoluten Minimum an Startkapital, ließ er sich von einem polnischen Mitarbeiter, „der kein Wort deutsch sprach“, dazu überreden, eine Niederlassung in Jelenia Gora zu gründen. Und heute ist der ehemalige Spachtelmeister Jacek Urbanczyk 48-Prozent-Miteigentümer der Hirsch International Polska Sp. z o.o. „In Polen haben wir ein Beteiligungsmodel für unsere Manager aufgesetzt und halten dort mittlerweile nur noch 30 Prozent an zwei Regional-Gesellschaften in Warschau und Katowice. Aus diesen Firmen sollen dann drei nachhaltig gewachsene polnische Familienunternehmen werden.
+
+
+
+    script(src="http://code.jquery.com/jquery-3.5.1.min.js", integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=", crossorigin="anonymous")
+
+    script(src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js")
+    
+    script.
+        $(document).ready(function(){
+            var slider = $('.slider').bxSlider({
+                captions: true,
+                adaptiveHeight: true,
+                nextText: '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19.4px" height="40.8px" viewBox="0 0 19.4 40.8" style="enable-background:new 0 0 19.4 40.8;" xml:space="preserve"><path id="Path_5441" class="st0" d="M2.1,2.1l15.4,18.3L2.1,38.7"/></svg>',
+                prevText: '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19.4px" height="40.8px" viewBox="0 0 19.4 40.8" style="enable-background:new 0 0 19.4 40.8;" xml:space="preserve"><path id="Path_5437" class="st0" d="M17.3,38.7L2,20.4L17.3,2.1"/></svg>'
+            });
+
+            //- $(window).on('resize', function(){
+            //-     console.log('resize');
+            //-     slider.redrawSlider;
+            //- });
+        });
