@@ -1876,12 +1876,14 @@ section {
 @media screen and (max-width: 1000px) {
   .section-i-left, .section-i-right {
     grid-template-columns: minmax(0, 1fr);
+    margin-bottom: calc( var(--space-section) * 1.5);
   }
   .section-i-left .img, .section-i-right .img {
     grid-row-start: 1;
   }
   .section-i-left .content.narrow, .section-i-right .content.narrow {
     margin: 0 auto;
+    max-width: calc(100% - var(--space-side)*2) !important;
   }
 }
 .section-i-left img, .section-i-right img {
