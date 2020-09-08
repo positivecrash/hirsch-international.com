@@ -14,8 +14,8 @@
             right: 0;
             bottom: 0;
             z-index: 10;
-            height: 100%;
-            overflow: hidden; 
+            height: 100vh;
+            overflow-y: scroll;
 
             @extend %hidden;
             pointer-events: none;
@@ -75,10 +75,10 @@
 
 
         .data {
-            margin-top: calc( var(--space-side) * 4);
-            height: 100%;
-            overflow-y: auto;
-            padding-right: calc( var(--space-side) * 4);
+            margin-top: calc( var(--space-side) * 5);
+            // height: 100%;
+            // overflow-y: auto;
+            // padding-right: calc( var(--space-side) * 4);
 
             .data__photos, .data__info { 
                 float: left;
@@ -125,8 +125,15 @@
                 }
 
                 .data__info {
+                    & > div { padding: 0 20px; }
                     margin-left: 0;
                     width: 100%;
+                    box-sizing: border-box;
+
+                    div {
+                        &, &:first-child { margin-bottom: 20px; }
+                        &:first-child { margin-top: 40px; }
+                    }
                 }
             }
         }

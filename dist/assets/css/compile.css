@@ -1319,8 +1319,8 @@ section {
   right: 0;
   bottom: 0;
   z-index: 10;
-  height: 100%;
-  overflow: hidden;
+  height: 100vh;
+  overflow-y: scroll;
   pointer-events: none;
 }
 .works__info.popup.active {
@@ -1363,10 +1363,7 @@ section {
   background-color: var(--color-orange);
 }
 .works__info .data {
-  margin-top: calc( var(--space-side) * 4);
-  height: 100%;
-  overflow-y: auto;
-  padding-right: calc( var(--space-side) * 4);
+  margin-top: calc( var(--space-side) * 5);
 }
 .works__info .data .data__photos, .works__info .data .data__info {
   float: left;
@@ -1403,6 +1400,16 @@ section {
   .works__info .data .data__info {
     margin-left: 0;
     width: 100%;
+    box-sizing: border-box;
+  }
+  .works__info .data .data__info > div {
+    padding: 0 20px;
+  }
+  .works__info .data .data__info div, .works__info .data .data__info div:first-child {
+    margin-bottom: 20px;
+  }
+  .works__info .data .data__info div:first-child {
+    margin-top: 40px;
   }
 }
 .works__item {
