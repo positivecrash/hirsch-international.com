@@ -145,6 +145,7 @@
 
         .item {
             margin-top: 40px;
+            &:hover { opacity: 0.7; }
         }
     }
 
@@ -176,4 +177,18 @@
     }
 
 
+}
+
+
+.hirschtree-mobile {
+    display: none;
+    margin: 0 auto;
+    
+    img { max-width: 100%; }
+}
+
+
+@media screen and (max-width: 1000px) {
+    .hirschtree-mobile { display: block; }
+    .hirschtree { display: none; }
 }

@@ -145,6 +145,7 @@ gulp.task('cropimg', function () {
     gulp
     .src(path.folder.image + 'specialization-3.png')
     .pipe(jimp({ [path.filename.imgcrop]: path.settings.imgcrop })).pipe(gulp.dest(path.folder.image));
+
 });
 
 

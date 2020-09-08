@@ -1574,6 +1574,9 @@ section {
 .hirschtree .level-1 .item, .hirschtree .level-2 .item, .hirschtree .level-3 .item {
   margin-top: 40px;
 }
+.hirschtree .level-1 .item:hover, .hirschtree .level-2 .item:hover, .hirschtree .level-3 .item:hover {
+  opacity: 0.7;
+}
 .hirschtree .level-1 {
   width: 630px;
 }
@@ -1596,6 +1599,23 @@ section {
   background-color: var(--color-darkblue);
 }
 
+.hirschtree-mobile {
+  display: none;
+  margin: 0 auto;
+}
+.hirschtree-mobile img {
+  max-width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .hirschtree-mobile {
+    display: block;
+  }
+
+  .hirschtree {
+    display: none;
+  }
+}
 .team__heading {
   margin-bottom: 80px;
 }
@@ -1852,6 +1872,9 @@ section {
   }
   .section-i-left .img, .section-i-right .img {
     grid-row-start: 1;
+  }
+  .section-i-left .content.narrow, .section-i-right .content.narrow {
+    margin: 0 auto;
   }
 }
 .section-i-left img, .section-i-right img {
