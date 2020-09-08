@@ -63,7 +63,7 @@ h4 {
 	margin-bottom: var(--space-side);
 }
 
-ul, ol, li, p, blockquote {
+ul, ol, li, p, blockquote, .p {
 	margin-bottom: 40px;
 
 	&:last-child {
@@ -81,3 +81,7 @@ p {
 
 .text-center { text-align: center; }
 .color-orange { color: var(--color-orange); }
+.imgTitle {
+	color: #FAB900;
+	padding-top: 10px;
+}

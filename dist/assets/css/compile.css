@@ -55,6 +55,7 @@ body {
   --color-orange: #F06400;
   --color-darkblue: #2F3545;
   --color-green: #A2C617;
+  --color-yellow: #FAB900;
   --space-side: 20px;
   --space-section: 100px;
   --animation-bump: cubic-bezier(0.6, 0.04, 0.98, 0.335);
@@ -149,10 +150,10 @@ h4 {
   margin-bottom: var(--space-side);
 }
 
-ul, ol, li, p, blockquote {
+ul, ol, li, p, blockquote, .p {
   margin-bottom: 40px;
 }
-ul:last-child, ol:last-child, li:last-child, p:last-child, blockquote:last-child {
+ul:last-child, ol:last-child, li:last-child, p:last-child, blockquote:last-child, .p:last-child {
   margin-bottom: 0;
 }
 
@@ -170,6 +171,11 @@ p {
 
 .color-orange {
   color: var(--color-orange);
+}
+
+.imgTitle {
+  color: #FAB900;
+  padding-top: 10px;
 }
 
 @keyframes FadeOut {
@@ -1671,15 +1677,43 @@ section {
 .history {
   background-color: var(--color-darkblue);
 }
+.history p:not(.p) {
+  margin-bottom: 0;
+}
 .history, .history h2 {
   color: var(--color-body);
 }
 .history .bx-caption {
-  color: #FAB900;
+  color: var(--color-yellow);
   padding-top: 10px;
 }
 .history .bx-pager {
   bottom: 40px;
+}
+.history__social {
+  text-align: center;
+  margin-top: calc( var(--space-section) * 1.5 );
+}
+.history__quote {
+  max-width: calc(700px - var(--space-side) * 2);
+  padding-left: var(--space-side);
+  padding-right: var(--space-side);
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+.history__quote p {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 300;
+  font-family: var(--font-family-headings);
+  font-size: calc( var(--font-size-text) + 16px );
+}
+.history__quote .sign {
+  text-align: right;
+}
+.history__quote .sign .st0 {
+  stroke: var(--color-yellow);
 }
 
 .map {
@@ -1811,6 +1845,14 @@ section {
   display: grid;
   gap: 4%;
   align-items: center;
+}
+@media screen and (max-width: 1000px) {
+  .section-i-left, .section-i-right {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .section-i-left .img, .section-i-right .img {
+    grid-row-start: 1;
+  }
 }
 .section-i-left img, .section-i-right img {
   max-width: 100%;

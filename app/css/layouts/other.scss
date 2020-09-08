@@ -149,12 +149,10 @@
 .section-i-right {
 
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
-
-    // grid-template-columns: 1fr 600px;
     justify-items: end;
 
-    // @media screen and (max-width: 1000px) {
-    //     grid-template-columns: 1fr 250px;
+    // @media screen and (min-width: 765px) and (max-width: 1000px) {
+    //     grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
     // }
 
     &.animatedAppear {
@@ -176,6 +174,14 @@
     display: grid;
     gap: 4%;
     align-items: center;
+
+    @media screen and (max-width: 1000px) {
+        grid-template-columns: minmax(0, 1fr);
+
+        .img {
+            grid-row-start: 1;
+        }
+    }
 
     img {
         max-width: 100%;

@@ -1,9 +1,13 @@
 .history {
     background-color: var(--color-darkblue);
+
+    p:not(.p) {
+        margin-bottom: 0;
+    }
     
     &, h2 { color: var(--color-body); }
     .bx-caption {
-        color: #FAB900;
+        color: var(--color-yellow);
         padding-top: 10px;
     }
 
@@ -11,13 +15,27 @@
         bottom: 40px;
     }
 
-    // .section-i-left, .section-i-right {
-    //     .img {
-    //         width: 55%;
-    //     }
+    &__social {
+        text-align: center;
+        margin-top: calc( var(--space-section) * 1.5 );
+    }
 
-    //     .content {
-    //         width: 41%;
-    //     }
-    // }
+    &__quote {
+        @include secw(700px);
+
+        p {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 300;
+            font-family: var(--font-family-headings);
+            font-size: calc( var(--font-size-text) + 16px );
+        }
+
+        .sign {
+            text-align: right;
+            .st0 {
+                stroke: var(--color-yellow);
+            }
+        }
+    }
 }
