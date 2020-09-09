@@ -1,3 +1,15 @@
+%serviceLink {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    background-color: var(--color-darkblue);
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    height: 60px;
+}
+
 .services {
     position: relative;
     
@@ -13,6 +25,10 @@
         background-position: 100% 50%;
         background-size: cover;
         background-image: image-url('services/service-default.jpg');
+
+        @media screen and (max-width: 600px) {
+            bottom: -40px;
+        }
     }
 
     &__border {
@@ -25,7 +41,7 @@
         z-index: 0;
 
         @media screen and (max-width: 600px) {
-            display: none;
+            opacity: 0;
         }
     }
 
@@ -55,19 +71,45 @@
 
         a {
             @extend %link_noline;
-            display: grid;
-            align-items: center;
-            text-align: center;
-            background-color: var(--color-darkblue);
-            color: #ffffff;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 10px 30px;
-            height: 60px;
+            @extend %serviceLink;
 
             &:hover {
                 background-color: var(--color-orange);
             }
+        }
+    }
+}
+
+
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(150px, 1fr));
+    gap: 20px;
+
+    @media screen and (max-width: 1200px) {
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+    }
+
+    @media screen and (max-width: 450px) {
+        grid-template-columns: minmax(150px, 1fr);
+    }
+
+    a {
+        @extend %link_noline;
+        @extend %serviceLink;
+        height: 100px;
+
+        &.current {
+            background-color: var(--color-orange);
+            cursor: default;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        &:hover {
+            opacity: 0.8;
         }
     }
 }

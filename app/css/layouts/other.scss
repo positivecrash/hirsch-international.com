@@ -224,6 +224,14 @@
 			animation-fill-mode: forwards;
         }
     }
+
+
+    &.service {
+        .content {
+            height: 600px;
+            overflow-y: scroll;
+        }
+    }
 }
 
 

@@ -66,7 +66,7 @@ body {
   --animation-duration-border: 0.4s;
 }
 
-h1 a, .btn-bordered, .btn-orange, .header__menu__links a, .footer a, .services__listcontent a, .recommendations a.recommendations__item, .works__info .close, .phrasewindow, .hirschtree .item, h1 a:hover, .btn-bordered:hover, .btn-orange:hover, .header__menu__links a:hover, .footer a:hover, .services__listcontent a:hover, .recommendations a.recommendations__item:hover, .works__info .close:hover, .phrasewindow:hover, .hirschtree .item:hover, h1 a:focus, .btn-bordered:focus, .btn-orange:focus, .header__menu__links a:focus, .footer a:focus, .services__listcontent a:focus, .recommendations a.recommendations__item:focus, .works__info .close:focus, .phrasewindow:focus, .hirschtree .item:focus, h1 a:visited, .btn-bordered:visited, .btn-orange:visited, .header__menu__links a:visited, .footer a:visited, .services__listcontent a:visited, .recommendations a.recommendations__item:visited, .works__info .close:visited, .phrasewindow:visited, .hirschtree .item:visited {
+h1 a, .btn-bordered, .btn-orange, .header__menu__links a, .footer a, .services__listcontent a, .services-list a, .recommendations a.recommendations__item, .works__info .close, .phrasewindow, .hirschtree .item, h1 a:hover, .btn-bordered:hover, .btn-orange:hover, .header__menu__links a:hover, .footer a:hover, .services__listcontent a:hover, .services-list a:hover, .recommendations a.recommendations__item:hover, .works__info .close:hover, .phrasewindow:hover, .hirschtree .item:hover, h1 a:focus, .btn-bordered:focus, .btn-orange:focus, .header__menu__links a:focus, .footer a:focus, .services__listcontent a:focus, .services-list a:focus, .recommendations a.recommendations__item:focus, .works__info .close:focus, .phrasewindow:focus, .hirschtree .item:focus, h1 a:visited, .btn-bordered:visited, .btn-orange:visited, .header__menu__links a:visited, .footer a:visited, .services__listcontent a:visited, .services-list a:visited, .recommendations a.recommendations__item:visited, .works__info .close:visited, .phrasewindow:visited, .hirschtree .item:visited {
   text-decoration: none;
   text-decoration: none !important;
 }
@@ -1213,6 +1213,18 @@ section {
   animation: FadeIn calc(var(--animation-appearduration)/2) var(--animation-bump) calc(var(--animation-appeardelay) + var(--animation-appearduration)) forwards;
 }
 
+.services__listcontent a, .services-list a {
+  display: grid;
+  align-items: center;
+  text-align: center;
+  background-color: var(--color-darkblue);
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  height: 60px;
+}
+
 .services {
   position: relative;
 }
@@ -1228,6 +1240,11 @@ section {
   background-size: cover;
   background-image: url('../i/services/service-default.jpg?1593625302');
 }
+@media screen and (max-width: 600px) {
+  .services__image {
+    bottom: -40px;
+  }
+}
 .services__border {
   position: absolute !important;
   top: 0;
@@ -1238,7 +1255,7 @@ section {
 }
 @media screen and (max-width: 600px) {
   .services__border {
-    display: none;
+    opacity: 0;
   }
 }
 .services__list {
@@ -1262,19 +1279,37 @@ section {
     padding-bottom: 0;
   }
 }
-.services__listcontent a {
-  display: grid;
-  align-items: center;
-  text-align: center;
-  background-color: var(--color-darkblue);
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 10px 30px;
-  height: 60px;
-}
 .services__listcontent a:hover {
   background-color: var(--color-orange);
+}
+
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(150px, 1fr));
+  gap: 20px;
+}
+@media screen and (max-width: 1200px) {
+  .services-list {
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+  }
+}
+@media screen and (max-width: 450px) {
+  .services-list {
+    grid-template-columns: minmax(150px, 1fr);
+  }
+}
+.services-list a {
+  height: 100px;
+}
+.services-list a.current {
+  background-color: var(--color-orange);
+  cursor: default;
+}
+.services-list a.current:hover {
+  opacity: 1;
+}
+.services-list a:hover {
+  opacity: 0.8;
 }
 
 .recommendations {
@@ -1402,7 +1437,7 @@ section {
     width: 100%;
     box-sizing: border-box;
   }
-  .works__info .data .data__info > div {
+  .works__info .data .data__info__inside {
     padding: 0 20px;
   }
   .works__info .data .data__info div, .works__info .data .data__info div:first-child {
@@ -1554,6 +1589,9 @@ section {
 }
 .hirschtree .item.head::before {
   display: none;
+}
+.hirschtree .item.head:hover {
+  opacity: 1 !important;
 }
 .hirschtree .level-1, .hirschtree .level-2, .hirschtree .level-3 {
   display: flex;
@@ -1908,6 +1946,10 @@ section {
   animation-timing-function: linear;
   animation-delay: var(--animation-appeardelay);
   animation-fill-mode: forwards;
+}
+.section-i-left.service .content, .section-i-right.service .content {
+  height: 600px;
+  overflow-y: scroll;
 }
 
 .kontakts .data__info {

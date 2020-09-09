@@ -114,6 +114,8 @@
             &::before {
                 display: none;
             }
+
+            &:hover { opacity: 1 !important; }
         }
     }
 
