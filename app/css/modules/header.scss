@@ -265,10 +265,35 @@
 				font-weight: 400;
 				font-size: calc(var(--font-size-text) + 32px);
 				position: absolute;
-				bottom: 10%;
+				bottom: 15%;
 				left: 0;
 				right: 0;
 				z-index: 1;
+			}
+		}
+
+		.scroll {
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 25px;
+
+			display: block;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			text-align: center;
+
+			&, &:hover {
+				@extend %link_noline;
+				color: var(--color-body);
+			}
+
+			span {
+				display: block;
+			}
+			.st0{ fill:none; stroke:#FFFFFF; stroke-miterlimit:10; }
+			.arrow {
+				animation: 3.5s ease-in-out 5s infinite forwards BounceScroll;
 			}
 		}
 	}

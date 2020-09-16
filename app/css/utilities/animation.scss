@@ -111,3 +111,29 @@
 		transform: translateX(0);
 	}
 }
+
+
+@keyframes BounceScroll {
+	0% {
+		transform: translateY(0);
+	}
+	5%{
+		transform: translateY(8%);
+	}
+	10% {
+		transform: translateY(0);
+	}
+	15%{
+		transform: translateY(8%);
+	}
+	20% {
+		transform: translateY(0);
+	}
+	25%{
+		transform: translateY(8%);
+	}
+	30% {
+		transform: translateY(0);
+	}
+	
+}
