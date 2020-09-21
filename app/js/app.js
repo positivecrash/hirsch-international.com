@@ -8,4 +8,11 @@ window.addEventListener('load', function(){
         animate(item);
     });
 
+    document.querySelectorAll(".toggler").forEach(function(togglerElement) {
+        togglerElement.addEventListener("click", function(){
+            this.classList.toggle("open");
+            document.getElementById(this.dataset.content).classList.toggle("open");
+        }, false);
+    });
+
 }, false);

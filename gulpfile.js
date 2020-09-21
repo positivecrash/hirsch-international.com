@@ -150,6 +150,10 @@ gulp.task('cropimg', function () {
     .src(path.folder.image + '404.png')
     .pipe(jimp({ [path.filename.imgcrop]: path.settings.imgcrop })).pipe(gulp.dest(path.folder.image));
 
+    gulp
+    .src(path.folder.image + 'Hirsch-Logo-Gorizontal.png')
+    .pipe(jimp({ [path.filename.imgcrop]: path.settings.imgcrop })).pipe(gulp.dest(path.folder.image));
+
 });
 
 

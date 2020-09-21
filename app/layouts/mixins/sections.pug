@@ -1,67 +1,75 @@
 mixin headerTop()
-	.container-content
-		.header__menu
-			.row.header__menu__links
-				.header__menu__links__item
-					a(href="") Referenzen
+	.header__top
+		.container-content
+			.header__top__mobile
+				a(href=""): img(src="assets/i/Hirsch-Logo-thumbnail.png", srcset="assets/i/Hirsch-Logo-Gorizontal@2x.png", alt="Hirsch International GMBH Logotype", loading="lazy", width="180px")
+				a.toggler(href="#", data-content="mobilemenu")
+					span
+					span
+					span
 
-				.header__menu__links__item
-					a(href="#") Leistungen
-					.header__menudropdown
-						.container-content
-							.services-list
-								a(href="#")
-									img(alt="", src="assets/i/tmp/history-4.jpg")
-									span Projekt- und Baumanagement
-								a(href="#")
-									img(alt="", src="assets/i/tmp/history-4.jpg")
-									span Trockenbau
-								a(href="#")
-									img(alt="", src="assets/i/tmp/history-4.jpg")
-									span Stuck- und Putzarbeiten (Farbe & Struktur)
-								a(href="#")
-									img(alt="", src="assets/i/tmp/history-4.jpg")
-									span Malerarbeiten
-								a(href="#")
-									img(alt="", src="assets/i/tmp/history-4.jpg")
-									span Bodenlegearbeiten
-								a(href="#")
-									img(alt="", src="assets/i/tmp/history-4.jpg")
-									span Bodenbeschichtungen
-								a(href="#")
-									img(alt="", src="assets/i/tmp/history-4.jpg")
-									span Fliesenlegearbeiten
-								a(href="#")
-									img(alt="", src="assets/i/tmp/history-4.jpg")
-									span Tischlerarbeiten
-								a(href="#")
-									img(alt="", src="assets/i/tmp/history-4.jpg")
-									span Wärmedämmung
-								a(href="#")
-									img(alt="", src="assets/i/tmp/history-4.jpg")
-									span Fassadentechnik
+			#mobilemenu.toggler-content.header__menu
+				.row.header__menu__links
+					.header__menu__links__item
+						a(href="") Referenzen
+
+					.header__menu__links__item
+						a(href="#") Leistungen
+						.header__menudropdown
+							.container-content
+								.services-list
+									a(href="#")
+										img(alt="", src="assets/i/tmp/history-4.jpg")
+										span Projekt- und Baumanagement
+									a(href="#")
+										img(alt="", src="assets/i/tmp/history-4.jpg")
+										span Trockenbau
+									a(href="#")
+										img(alt="", src="assets/i/tmp/history-4.jpg")
+										span Stuck- und Putzarbeiten (Farbe & Struktur)
+									a(href="#")
+										img(alt="", src="assets/i/tmp/history-4.jpg")
+										span Malerarbeiten
+									a(href="#")
+										img(alt="", src="assets/i/tmp/history-4.jpg")
+										span Bodenlegearbeiten
+									a(href="#")
+										img(alt="", src="assets/i/tmp/history-4.jpg")
+										span Bodenbeschichtungen
+									a(href="#")
+										img(alt="", src="assets/i/tmp/history-4.jpg")
+										span Fliesenlegearbeiten
+									a(href="#")
+										img(alt="", src="assets/i/tmp/history-4.jpg")
+										span Tischlerarbeiten
+									a(href="#")
+										img(alt="", src="assets/i/tmp/history-4.jpg")
+										span Wärmedämmung
+									a(href="#")
+										img(alt="", src="assets/i/tmp/history-4.jpg")
+										span Fassadentechnik
 
 
-				.header__menu__links__item
-					a(href="") Über uns
+					.header__menu__links__item
+						a(href="") Über uns
 
-			.row.logo
-				a(href=""): img(src="assets/i/Hirsch-Logo-thumbnail.png", srcset="assets/i/Hirsch-Logo@2x.png", alt="Hirsch International GMBH Logotype", loading="lazy", width="120px")
-				
-			.row.header__menu__links
-				.header__menu__links__item
-					a(href="") Team
-				.header__menu__links__item
-					a(href="") Geschichte
-				.header__menu__links__item
-					a(href="") Kontakt
+				.row.logo
+					a(href=""): img(src="assets/i/Hirsch-Logo-thumbnail.png", srcset="assets/i/Hirsch-Logo@2x.png", alt="Hirsch International GMBH Logotype", loading="lazy", width="120px")
+					
+				.row.header__menu__links
+					.header__menu__links__item
+						a(href="") Team
+					.header__menu__links__item
+						a(href="") Geschichte
+					.header__menu__links__item
+						a(href="") Kontakt
 
-				.header__menu__links__item.language.dropdown
-					a(href="").dropdown__toggle.active DE
-					.dropdown__content
-						a(href="").active DE
-						a(href="") EN
-						a(href="") PL
+					.header__menu__links__item.language.dropdown
+						a(href="").dropdown__toggle.active DE
+						.dropdown__content
+							a(href="").active DE
+							a(href="") EN
+							a(href="") PL
 
 
 mixin sign_Hirsch()
