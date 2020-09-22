@@ -89,7 +89,7 @@ h1 a, .btn-bordered, .btn-orange, .header__menu__links a, .header.header-home .s
   animation-fill-mode: forwards;
 }
 
-html:not([class*='home']) body > *, .section-i-left > *, .section-i-right > * {
+body:not([class*='home']) > *, .section-i-left > *, .section-i-right > * {
   min-width: 0;
   max-width: 100%;
 }
@@ -817,6 +817,10 @@ body {
   opacity: .8;
 }
 
+html {
+  height: 100%;
+}
+
 html, body {
   position: relative;
   height: 100%;
@@ -827,23 +831,20 @@ body {
   animation: 0.4s FadeIn ease-in forwards;
 }
 
-html:not([class*='home']) {
-  height: 100%;
-}
-html:not([class*='home']) body {
+body:not([class*='home']) {
   min-height: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
-html:not([class*='home']) .footer {
+body:not([class*='home']) .footer {
   grid-row-start: 3;
   grid-row-end: 4;
 }
 
-html.default main {
+body.default main {
   padding-bottom: var(--space-section);
 }
-html.default main section:first-child {
+body.default main section:first-child {
   margin-top: calc(var(--space-section)/2);
 }
 

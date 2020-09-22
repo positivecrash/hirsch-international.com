@@ -17,24 +17,24 @@ html(lang='en', class=page_layout)
 		link(rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png")
 		link(rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png")
 
-	body
-
-		if page_layout == 'home'
+	if page_layout == 'home'
+		body.home
 			include ../includes/header-home.pug
-			main#main.home(role="main")
+			main#main(role="main")
 				block content
 			include ../includes/footer-default.pug
 
-		
-		if page_layout == 'default'
+	
+	if page_layout == 'default'
+		body.default
 			include ../includes/header-default.pug
 			main(role="main")
 				block content
 			include ../includes/footer-default.pug
 
 
-		if page_layout == 'history'
-			include ../includes/header-default.pug
-			main.history(role="main")
-				block content
-			include ../includes/footer-default.pug
+	if page_layout == 'history'
+		include ../includes/header-default.pug
+		main(role="main")
+			block content
+		include ../includes/footer-default.pug

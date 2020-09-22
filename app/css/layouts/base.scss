@@ -1,3 +1,4 @@
+html { height: 100%; }
 html, body { position: relative; height: 100%; }
 
 body
@@ -8,22 +9,20 @@ body
 
 
 //sticky footer -- grid
-html:not([class*='home']) {
-  height: 100%;
+body:not([class*='home']) {
 
-  body {
-    min-height: 100%;
-    @extend %fix_grid;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-  }
+  min-height: 100%;
+  @extend %fix_grid;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  
   .footer {
     grid-row-start: 3;
     grid-row-end: 4;
   }
 }
 
-html.default {
+body.default {
   main {
     section:first-child {
       margin-top: calc(var(--space-section)/2);
