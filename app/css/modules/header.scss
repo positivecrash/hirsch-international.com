@@ -1,6 +1,11 @@
 .header {
 	position: relative;
 
+	&__top {
+		position: relative;
+		z-index: 10;
+	}
+
 	&__menu {
 		display: grid;
 		grid-template-columns: 1fr 120px 1fr;
@@ -231,10 +236,6 @@
 		display: grid;
 		grid-template-rows: auto 1fr;
 
-		.header-home__top {
-			position: relative;
-			z-index: 10;
-		}
 
 		.header-home__video {
 			overflow: hidden;

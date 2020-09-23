@@ -414,6 +414,10 @@ ul.bxslider {
 .header {
   position: relative;
 }
+.header__top {
+  position: relative;
+  z-index: 10;
+}
 .header__menu {
   display: grid;
   grid-template-columns: 1fr 120px 1fr;
@@ -587,10 +591,6 @@ ul.bxslider {
   margin-bottom: var(--space-section);
   display: grid;
   grid-template-rows: auto 1fr;
-}
-.header.header-home .header-home__top {
-  position: relative;
-  z-index: 10;
 }
 .header.header-home .header-home__video {
   overflow: hidden;
@@ -901,7 +901,7 @@ section {
   margin-bottom: var(--space-section);
 }
 
-.home > section:last-child {
+.home main > section:last-child {
   margin-bottom: 0;
 }
 
