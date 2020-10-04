@@ -121,13 +121,13 @@
             @media screen and (max-width: 700px) {
                 .data__photos, .data__info {
                     float: none;
-                    width: 100%;
+                    width: 100% !important;
                 }
 
                 .data__info {
                     &__inside { padding: 0 20px; }
                     margin-left: 0;
-                    width: 100%;
+                    width: 100% !important;
                     box-sizing: border-box;
 
                     div {

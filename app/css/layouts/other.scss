@@ -298,3 +298,42 @@
         letter-spacing: 1px;
     }
 }
+
+
+
+.social {
+    .works__item {
+        &:hover{
+            cursor: default;
+            opacity: 1;
+        }
+
+        &__title {
+            color: var(--color-orange);
+        }
+
+        &__year {
+            font-weight: 700;
+        }
+
+        &__partner {
+            span:first-child {
+                color: var(--color-orange);
+            }
+        }
+    }
+
+    .data {
+        margin-top: 0;
+
+        &__photos {
+            width: 50% !important;
+        }
+
+        &__info {
+            margin-right: 5%;
+            width: 40% !important;
+        }
+
+    }
+}

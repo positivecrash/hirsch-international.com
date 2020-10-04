@@ -22,7 +22,7 @@ body:not([class*='home']) {
   }
 }
 
-body.default {
+body.default,  body.social{
   main {
     section:first-child {
       margin-top: calc(var(--space-section)/2);

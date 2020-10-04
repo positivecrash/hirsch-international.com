@@ -1,7 +1,7 @@
 doctype html
 
 block html
-html(lang='en', class=page_layout)
+html(lang='en')
 	
 	head
 		meta(http-equiv="Content-Type" content="text/html;charset=UTF-8")
@@ -34,7 +34,15 @@ html(lang='en', class=page_layout)
 
 
 	if page_layout == 'history'
-		include ../includes/header-default.pug
-		main(role="main")
-			block content
-		include ../includes/footer-default.pug
+		body.history
+			include ../includes/header-default.pug
+			main(role="main")
+				block content
+			include ../includes/footer-default.pug
+
+	if page_layout == 'social'
+		body.social
+			include ../includes/header-social.pug
+			main(role="main")
+				block content
+			include ../includes/footer-social.pug

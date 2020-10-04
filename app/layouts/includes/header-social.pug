@@ -1,0 +1,21 @@
+include ../mixins/sections.pug
+
+header.header(role='banner')
+	.container-content
+		.row
+			.logo
+				a(href=""): img(src="assets/i/Hirsch-Logo-thumbnail.png", srcset="assets/i/Hirsch-Logo@2x.png", alt="Hirsch International GMBH Logotype", loading="lazy", width="120px")
+
+		.row.header__menu__links
+			.header__menu__links__item: a(href="") über uns
+			.header__menu__links__item: a(href="") sozialen Projekte
+
+			.header__menu__links__item.language.dropdown
+				a(href="").dropdown__toggle.active DE
+				.dropdown__content
+					a(href="").active DE
+					a(href="") EN
+					a(href="") PL
+
+
+	img.emblem(alt="", src="assets/i/Hirsch-Logo-Social-thumbnail.png", srcset="assets/i/Hirsch-Logo-Social@2x.png", loading="lazy", width="206px")

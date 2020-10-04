@@ -366,6 +366,11 @@ ul.bxslider {
   /*fix other elements on the page moving (on Chrome)*/
   -webkit-transform: translatez(0);
 }
+.bx-viewport img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 
 .bx-pager {
   position: absolute;
@@ -413,6 +418,7 @@ ul.bxslider {
 
 .header {
   position: relative;
+  background-color: var(--color-body);
 }
 .header__top {
   position: relative;
@@ -603,6 +609,7 @@ ul.bxslider {
   top: 0;
   left: 0;
   min-width: 100%;
+  min-height: 100%;
   width: auto;
   height: auto;
   z-index: 0;
@@ -724,6 +731,46 @@ body {
   transform-origin: calc(50% - var(--toggler-weight)*2 );
 }
 
+.social .header {
+  text-align: center;
+  background-color: #F2EDE2;
+  margin-bottom: 80px;
+}
+.social .header > * {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+}
+.social .header .row:last-child {
+  text-align: right;
+}
+.social .header .emblem {
+  display: inline-block;
+  position: relative;
+  top: -60px;
+}
+.social .header .header__menu__links__item {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+.social .header .header__menu__links__item:not(.language) a:hover, .social .header .header__menu__links__item:not(.language) a.active {
+  color: var(--color-orange);
+  background-color: transparent;
+}
+@media screen and (max-width: 550px) {
+  .social .header {
+    padding-bottom: 40px;
+  }
+  .social .header > * {
+    align-items: start;
+  }
+  .social .header .emblem {
+    top: 0;
+  }
+}
+
 .footer {
   background-color: var(--color-text);
   padding-top: 50px;
@@ -791,7 +838,7 @@ body {
 @media screen and (max-width: 1000px) {
   .footer > div {
     grid-auto-flow: row;
-    grid-template-columns: auto;
+    grid-template-columns: auto !important;
     gap: 100px;
   }
   .footer > div .footer__socials {
@@ -815,6 +862,33 @@ body {
 }
 .banner-social a:hover {
   opacity: .8;
+}
+
+.social .footer > div {
+  grid-template-columns: 3fr 1fr;
+  align-items: center;
+}
+.social .footer__content {
+  border-right: 1px solid #5C5C5C;
+}
+.social .footer__content__nav {
+  display: block;
+}
+.social .footer__content__nav a {
+  color: var(--color-orange);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  display: inline-block;
+  margin-right: 30px;
+}
+.social .footer__content__nav a:last-child {
+  margin-right: 0;
+}
+@media screen and (max-width: 1000px) {
+  .social .footer__content {
+    border-right: none;
+  }
 }
 
 html {
@@ -841,10 +915,10 @@ body:not([class*='home']) .footer {
   grid-row-end: 4;
 }
 
-body.default main {
+body.default main, body.social main {
   padding-bottom: var(--space-section);
 }
-body.default main section:first-child {
+body.default main section:first-child, body.social main section:first-child {
   margin-top: calc(var(--space-section)/2);
 }
 
@@ -1435,7 +1509,7 @@ section {
   background-repeat: no-repeat;
   background-position: 100% 50%;
   background-size: cover;
-  background-image: url('../i/services/service-default.jpg?1593625302');
+  background-image: url('../i/service-default.jpg?1593625302');
 }
 @media screen and (max-width: 600px) {
   .services__image {
@@ -1627,11 +1701,11 @@ section {
 @media screen and (max-width: 700px) {
   .works__info .data .data__photos, .works__info .data .data__info {
     float: none;
-    width: 100%;
+    width: 100% !important;
   }
   .works__info .data .data__info {
     margin-left: 0;
-    width: 100%;
+    width: 100% !important;
     box-sizing: border-box;
   }
   .works__info .data .data__info__inside {
@@ -1977,6 +2051,9 @@ section {
 .history__quote .sign .st0 {
   stroke: var(--color-yellow);
 }
+.history .section-i-left, .history .section-i-right {
+  justify-items: center;
+}
 
 .map {
   position: relative;
@@ -2203,4 +2280,28 @@ section {
   margin-top: 66px;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+.social .works__item:hover {
+  cursor: default;
+  opacity: 1;
+}
+.social .works__item__title {
+  color: var(--color-orange);
+}
+.social .works__item__year {
+  font-weight: 700;
+}
+.social .works__item__partner span:first-child {
+  color: var(--color-orange);
+}
+.social .data {
+  margin-top: 0;
+}
+.social .data__photos {
+  width: 50% !important;
+}
+.social .data__info {
+  margin-right: 5%;
+  width: 40% !important;
 }
