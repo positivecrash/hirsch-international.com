@@ -555,10 +555,10 @@
     /* animate */
 
     .splide__slide {
-        .splide__slide__back {
-            transform-origin: 50% 100%;
-            transform: scaleY(0);
-        }
+        // .splide__slide__back {
+        //     transform-origin: 50% 100%;
+        //     transform: scaleY(0);
+        // }
 
         .splide__slide__desc {
             div:first-child, div:last-child {
@@ -581,9 +581,9 @@
 
     &.animated {
         .splide__slide.is-visible {
-            .splide__slide__back {
-                animation: ScaleY var(--animation-appearduration) var(--animation-bump) var(--animation-appeardelay) forwards;
-            }
+            // .splide__slide__back {
+            //     animation: ScaleY var(--animation-appearduration) var(--animation-bump) var(--animation-appeardelay) forwards;
+            // }
 
             .splide__slide__desc {
                 div:first-child, div:last-child {
