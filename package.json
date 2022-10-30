@@ -27,7 +27,7 @@
   "dependencies": {
     "@splidejs/splide": "^2.4.6",
     "async": "^3.0.1",
-    "browser-sync": "^2.26.0",
+    "browser-sync": "^2.27.10",
     "gulp-consolidate": "^0.2.0",
     "gulp-iconfont": "^10.0.2",
     "gulp-iconfont-css": "^3.0.0",
